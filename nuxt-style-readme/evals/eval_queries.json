@@ -1,0 +1,102 @@
+[
+  {
+    "query": "Write a README for this repo.",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "can u clean up teh readme, its a mess and way too long",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "The front page of this project doesn't really explain what it does or how to run it. Fix that.",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "I just added a --watch flag and dropped support for Node 18. The docs on the repo front page are out of date now.",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "This is a Rust crate, the README is three lines long. Give it a proper one.",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "Bump the version to 2.0, retag, and rewrite the readme so it matches the new API surface.",
+    "should_trigger": true,
+    "split": "train"
+  },
+  {
+    "query": "Help me figure out why my Nuxt app is throwing a hydration mismatch on the product page.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "Write the release notes for v2.1.0 based on the commits since the last tag.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "Generate API reference documentation for every exported function in src/.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "We need a CONTRIBUTING.md that explains our branch naming and PR review process.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "Refactor the parser in src/index.ts to use an explicit state machine instead of nested conditionals.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "Write landing page copy for our product, something punchy for the hero section.",
+    "should_trigger": false,
+    "split": "train"
+  },
+  {
+    "query": "I've got a repo at ~/dev/har2pdf with a pyproject.toml and a NOTES.md full of format gotchas my coworker left. Can you turn all that into something a new person could actually follow?",
+    "should_trigger": true,
+    "split": "validation"
+  },
+  {
+    "query": "Make this project's docs read like my other repositories do.",
+    "should_trigger": true,
+    "split": "validation"
+  },
+  {
+    "query": "The README has fourteen sections and nobody reads past the first one. Restructure it.",
+    "should_trigger": true,
+    "split": "validation"
+  },
+  {
+    "query": "I finished this tool over the weekend and pushed it. What should the front page say so people actually understand it?",
+    "should_trigger": true,
+    "split": "validation"
+  },
+  {
+    "query": "Add a getting-started guide under docs/guide/ on our documentation site.",
+    "should_trigger": false,
+    "split": "validation"
+  },
+  {
+    "query": "What does the README say the install command is? I can't find it.",
+    "should_trigger": false,
+    "split": "validation"
+  },
+  {
+    "query": "Update the Unreleased section of the CHANGELOG with what we merged this week.",
+    "should_trigger": false,
+    "split": "validation"
+  },
+  {
+    "query": "Write an architecture decision record explaining why we picked Postgres over SQLite.",
+    "should_trigger": false,
+    "split": "validation"
+  }
+]

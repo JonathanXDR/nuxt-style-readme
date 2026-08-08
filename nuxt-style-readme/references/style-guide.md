@@ -1,0 +1,191 @@
+# Style guide
+
+How the README reads and renders. Read this before writing prose.
+
+Conventions are split by how much they bend. Strong defaults hold unless the repository gives you a reason. Conditional patterns depend on a condition you can check. Repository-specific decisions are yours to make from evidence. The last group never applies.
+
+## Strong defaults
+
+### Voice
+
+Write for a competent developer who has never seen this project. Explain what they cannot infer and skip what they can.
+
+Second person for instructions. Present tense for behavior: "The build refuses to write the file if a check fails", not "will refuse". State facts directly and let them carry their own weight. If something is genuinely good, the specific detail proves it better than the adjective.
+
+### Prose
+
+- One idea per paragraph. Two to four sentences is the working range. A single strong sentence is often enough.
+- Prefer a concrete noun to an abstraction. "Keychain entry" beats "credential storage mechanism".
+- Cut phrases that add no information: "simply", "just", "of course", "as you can see", "it is worth noting that".
+- Cut sentences that restate the heading.
+- The dash and semicolon rules are a non-negotiable in `SKILL.md` and apply to every sentence you write.
+- American spelling, consistently.
+
+### Headings
+
+Title case for H2 section names: `Quick Start`, `How It Works`, `Next Steps`, `Project Structure`.
+
+H2 sections take one leading emoji and a space, except the three exception headings fixed in `SKILL.md`'s non-negotiables.
+
+H3 and below stay plain. `### Theming`, `### Naming`, `### How it fits together`, `### Releasing`. No emoji, and sentence case is fine at this level.
+
+Pick a heading pattern once and hold it for the whole document.
+
+### Code blocks
+
+Always tag the language. Use `text` for output, trees, and diagrams that are not code.
+
+Show the command a reader would actually type. When a block lists several commands, align trailing comments into a column:
+
+````markdown
+```bash
+bun install         # install dependencies and set up git hooks
+bun run lint        # type-checked ESLint
+bun test            # run the test suite
+bun run build       # bundle src/ into dist/
+```
+````
+
+Put the command first and the explanation after. A reader scanning for the install line should hit it immediately.
+
+### Links
+
+Relative links for anything inside the repository, in `./path` form. GitHub resolves these against the current branch, and they survive a clone.
+
+```markdown
+[`scripts/build.ts`](./scripts/build.ts)
+```
+
+Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Linking a target again is fine at a point where the reader acts on it, such as a Next Steps entry. Do not scatter repeated links through running prose.
+
+Never link a file that does not exist.
+
+### License wording
+
+One line when the license is simple and the repository owns everything in it:
+
+```markdown
+Licensed under the [MIT license](./LICENSE) © Jonathan Russ.
+```
+
+Two parts when third party terms apply. State the code license first, then draw the boundary explicitly:
+
+```markdown
+The tooling and wrapper code in this repository is [MIT licensed](./LICENSE).
+
+That license covers the code only. It grants no rights to <asset>, which is
+<terms> and governed by the [<name> license](<url>).
+```
+
+Name the copyright holder from the LICENSE file, never from a guess.
+
+## Conditional patterns
+
+### Emoji for H2 headings
+
+Pick for meaning, not decoration. These are established, and reusing them keeps repositories recognizable as one family:
+
+| Emoji | Section |
+| ----- | ------- |
+| 📋 | Prerequisites |
+| 🚀 | Quick Start, Install, Getting Started |
+| 💻 | Usage, for libraries and packages |
+| 🧪 | Usage, for CLIs, applications, and scripts |
+| 📦 | Examples, packaging, archive contents |
+| ⚙️ | Configuration, Settings |
+| 🔧 | How It Works |
+| 🏗️ | Architecture |
+| 🗂️ | Project Structure |
+| 🔐 | Secrets, credentials, security |
+| 🔑 | License keys, tokens |
+| 🎨 | Icons, themes, visual assets |
+| 🩹 | Troubleshooting |
+| ⚠️ | Limitations |
+| 🛠️ | Development |
+| ⛰️ | Next Steps |
+| ⚖️ | License |
+
+For a section not on this list, choose an emoji a reader recognizes instantly and can connect to the heading without thinking. Avoid anything abstract, ornamental, or clever.
+
+One emoji per H2, and never the same emoji on two H2 headings. Feature bullets follow the same uniqueness rule among themselves. An emoji may repeat across levels, such as a bullet echoing an H2, when it is the honest fit for both.
+
+### Tables
+
+Use a table when a reader will scan rather than read, and when every row has the same shape. Three or more parallel items is the usual threshold.
+
+Good uses: option and default and effect, symptom and fix, alias and command, package and prefix, stage and responsibility, folder and purpose.
+
+Keep cells short. A cell running past roughly one line means the content wanted prose or its own subsection. Center a column only when its values are short markers.
+
+### Flow diagrams
+
+When a project is a pipeline and the stage names carry the explanation, a plain diagram beats a paragraph:
+
+````markdown
+```text
+Interceptor ─────── captures the composition response
+        │
+Extractor ───────── enumerates referenced assets
+        │
+Downloader ──────── fetches them in parallel
+        │
+Composer ────────── assembles combined.glb
+```
+````
+
+Every stage gets a short description on its own line. Use this only when the flow is genuinely linear. It does not survive branching.
+
+Annotated file trees follow the same rule. Every line earns a comment or the tree is decoration.
+
+### GitHub alerts
+
+The five supported types, with GitHub's own definitions:
+
+| Type | GitHub's definition |
+| ---- | ------------------- |
+| `NOTE` | "Useful information that users should know, even when skimming content." |
+| `TIP` | "Helpful advice for doing things better or more easily." |
+| `IMPORTANT` | "Key information users need to know to achieve their goal." |
+| `WARNING` | "Urgent info that needs immediate user attention to avoid problems." |
+| `CAUTION` | "Advises about risks or negative outcomes of certain actions." |
+
+Syntax is a blockquote whose first line is the bracketed type in capitals:
+
+```markdown
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+```
+
+GitHub's stated limits, quoted: "Use alerts only when they are crucial for user success and limit them to one or two per article to prevent overloading the reader. Additionally, you should avoid placing alerts consecutively." Also: "Alerts cannot be nested within other elements."
+
+In practice that means one or two per README.
+
+Choose the type by consequence, not by emphasis. A legal or licensing constraint is `IMPORTANT`. An action that can destroy data or expose a secret is `CAUTION`. Something that breaks the install for everyone is `WARNING`. A convenience is `TIP`. Context is `NOTE`.
+
+If the point needs several paragraphs or a list, it needs a section, not an alert.
+
+These rules were recorded from GitHub's documentation when this skill was written. Confirm them against the live page before relying on them, and say so if you could not.
+
+## Repository-specific decisions
+
+Decide these from the repository, not from a rule:
+
+- Whether the title is the package name or a product name. Publishable packages use the exact package name so a reader can match it against what they install.
+- Which section carries the domain. Every repository has one or two areas that do not fit a generic heading, and naming them well is what makes the README feel written rather than generated.
+- Where the depth goes. Some projects need a long configuration table and a two-line usage section. Others are the reverse.
+- Whether a diagram, a table, or a paragraph explains a thing best.
+- How much a contributor needs. A library with a release process needs more than a userscript.
+- Which emoji fits a section this list does not cover.
+
+## Avoid
+
+A final sweep before you finish. The badge and artwork rules live in `SKILL.md` and are not repeated here.
+
+- A table of contents. GitHub generates an outline from the headings.
+- HTML anchor tags around headings. GitHub already generates anchors.
+- "Powerful", "modern", "blazing fast", "seamless", "robust", "easy to use", "out of the box", and "leverage" as a verb.
+- Sections whose only content is a link to another section.
+- Explaining what a reader of this project already knows. A Rust crate's README does not explain what Cargo is.
+- Filler transitions: "In this section we will", "Let's dive in", "Now that we have covered".
+- Long unbroken prose where a table or list would be scanned instead of read.
+- Making it longer to make it look finished.

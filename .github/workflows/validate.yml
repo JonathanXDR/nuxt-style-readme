@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Validate skill frontmatter and naming
+        run: uvx --from skills-ref agentskills validate ./nuxt-style-readme
+      - name: Check SKILL.md size budgets
+        run: |
+          lines=$(wc -l < nuxt-style-readme/SKILL.md)
+          chars=$(awk '/^---$/{c++; next} c>=2' nuxt-style-readme/SKILL.md | wc -c)
+          echo "SKILL.md: $lines lines, body $chars chars (~$((chars / 4)) tokens)"
+          test "$lines" -le 500
+          test "$((chars / 4))" -le 5000

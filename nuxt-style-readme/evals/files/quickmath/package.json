@@ -1,0 +1,7 @@
+{
+  "name": "quickmath",
+  "version": "0.2.0",
+  "description": "Clamp, lerp, and remap helpers",
+  "type": "module",
+  "main": "index.js"
+}

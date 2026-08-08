@@ -1,0 +1,9 @@
+[project]
+name = "har2pdf"
+version = "0.4.1"
+requires-python = ">=3.11"
+dependencies = ["pypdf>=5", "pillow>=11"]
+license = { text = "MIT" }
+
+[project.scripts]
+har2pdf = "har2pdf.cli:main"
