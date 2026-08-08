@@ -71,6 +71,8 @@ The stock harness runs each query in an empty project root and counts a run as t
 
 The second pass therefore used a corrected harness: each run received its own isolated copy of a small real repository as its project root, and detection accepted a skill consult at any point in the session within a 120 second budget.
 
+That harness has one more trap worth knowing before anyone runs it again. It sends `SIGKILL` to each `claude` process as soon as a verdict is reached, which that process cannot catch, so it never shuts down the MCP servers it started. Those servers are reparented to the init process and survive. A well behaved server exits when its stdin closes, but one that does not will sit spinning, and a hundred or so runs can leave enough of them to saturate several CPU cores. Spawn each run in its own process group with `start_new_session=True` and signal the group with `os.killpg` rather than the single process.
+
 | Pass | Harness | Result |
 | ---- | ------- | ------ |
 | 1 | Stock, empty project root, first tool call only | 11 of 20. Every negative correct, nine of ten positives failed. |
