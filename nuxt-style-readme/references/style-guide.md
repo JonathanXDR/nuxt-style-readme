@@ -25,7 +25,7 @@ Second person for instructions. Present tense for behavior: "The build refuses t
 
 Title case for H2 section names: `Quick Start`, `How It Works`, `Next Steps`, `Project Structure`.
 
-H2 sections take one leading emoji and a space, except the three exception headings fixed in `SKILL.md`'s non-negotiables.
+H2 sections take one leading emoji and a space. `Features`, `Why?`, and `Background` are the exceptions, as fixed in `SKILL.md`.
 
 H3 and below stay plain. `### Theming`, `### Naming`, `### How it fits together`, `### Releasing`. No emoji, and sentence case is fine at this level.
 
