@@ -3,7 +3,7 @@
 An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-inspired documentation style.
 
 > [!NOTE]
-> This is an opinionated style. It adds no badges and no hero artwork, and it leaves out any section your repository gives it no evidence for. If you want a README that fills in every heading a template offers, this is the wrong skill.
+> This is an opinionated style. It adds a banner, badges, or docs links only when your repository provides them, and it leaves out any section it has no evidence for. If you want a README that fills in every heading a template offers, this is the wrong skill.
 
 ## Features
 
@@ -14,7 +14,7 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🧩 **Domain sections:** Finds the one to three sections that only your project would have.
 - 🚦 **Sparing alerts:** Holds alerts to GitHub's recommended one or two, with severity chosen by consequence.
 - 🪶 **Cheap to keep loaded:** Keeps `SKILL.md` well inside its budget and loads references only when needed.
-- ✅ **Built-in evals:** Verifies the skill with 96 output assertions plus 20 trigger queries.
+- ✅ **Built-in evals:** Verifies the skill with 106 output assertions plus 20 trigger queries.
 
 ## 🚀 Quick Start
 
@@ -56,7 +56,7 @@ Content is split so that only what a step needs gets loaded:
 
 The style guide separates conventions by how far they bend: strong defaults that hold unless the repository objects, conditional patterns tied to a checkable condition, decisions left to the repository, and a list of things that never apply.
 
-The conventions come from a set of existing READMEs that already use this style, with the wider Nuxt ecosystem as the source of the skeleton. Nuxt contributes the principles, which are the short introduction, the feature-first presentation, the fast path to first success, and minimal ceremony. The rest is the divergence: no badges, no banner, feature bullets promoted from plain text to highlighted entries, and far more of the page spent on tables, verified commands, and stated limitations.
+The conventions come from a set of existing READMEs that already use this style, with the wider Nuxt ecosystem as the source of the skeleton. Nuxt contributes the principles, which are the short introduction, the feature-first presentation, the fast path to first success, the banner-and-badges opening, and minimal ceremony. The divergence is that chrome must be earned: a banner, badge, or docs link appears only when the repository provides the asset or proves the fact, and far more of the page goes to tables, verified commands, and stated limitations.
 
 This page is the skill's own output, so it doubles as the worked example.
 
