@@ -45,7 +45,8 @@ How to use it:
 
 ## Features
 
-<!-- No emoji on this heading. One emoji on every bullet. Four to nine bullets. -->
+<!-- No emoji on this heading. One emoji on every bullet. About four to fifteen
+     bullets, more only when genuinely earned. -->
 
 - <emoji> **<Capability>:** <One short present-tense sentence stating what it does for the reader.>
 - <emoji> **<Capability>:** <One short present-tense sentence stating what it does for the reader.>

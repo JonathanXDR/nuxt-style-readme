@@ -56,7 +56,7 @@ Relative links for anything inside the repository, in `./path` form. GitHub reso
 [`scripts/build.ts`](./scripts/build.ts)
 ```
 
-External links point at the most specific page that answers the reader's question, not the product homepage. Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Do not link the same target repeatedly. A Next Steps entry may point at a target that was already linked earlier, because every entry in that list is a link by design.
+External links point at the most specific page that answers the reader's question, not the product homepage. Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. A linked feature label counts as that first mention, so the bullet's own sentence and later prose use the bare name. Do not link the same target repeatedly. A Next Steps entry may point at a target that was already linked earlier, because every entry in that list is a link by design.
 
 Never link a file that does not exist.
 
