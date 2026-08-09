@@ -12,9 +12,9 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🎯 **Scannable feature bullets:** One emoji, a bold name, one sentence of concrete capability, in a format that stays consistent across every repository you apply it to.
 - 📐 **Settled heading conventions:** `## Features`, `## Why?`, and `## Background` carry no emoji, every other H2 carries exactly one, and no emoji repeats across H2 headings.
 - 🧩 **Domain sections, not filler:** The skill actively looks for the one to three sections that only your project would have, which is what stops the output reading like a template.
-- 🚦 **Alerts used sparingly:** Held to GitHub's own limit of one or two per document, with severity chosen by consequence and re-checked against the live documentation.
-- 🪶 **Cheap to keep loaded:** `SKILL.md` is 143 lines, well inside the recommended 500 line and 5,000 token budget, with the style guide, section rules, and template loaded only at the step that needs them.
-- ✅ **Ships with its own evals:** 96 assertions across 13 output cases over 8 fixture repositories, plus 20 trigger queries, run with and without the skill so the difference is measured rather than asserted.
+- 🚦 **Alerts used sparingly:** Defaulting to GitHub's own recommendation of one or two per document, with severity chosen by consequence and re-checked against the live documentation.
+- 🪶 **Cheap to keep loaded:** `SKILL.md` stays well inside the recommended 500 line and 5,000 token budget, with the style guide, section rules, and template loaded only at the step that needs them.
+- ✅ **Ships with its own evals:** 96 assertions across 13 output cases over 8 fixture repositories, plus 20 trigger queries, with the output cases run with and without the skill so the difference is measured rather than asserted.
 
 ## 🚀 Install
 
@@ -68,9 +68,9 @@ This page is the skill's own output, so it doubles as the worked example.
 
 ## ⚠️ Limitations
 
-- Every output eval is a single run against a single model, so the recorded scores carry no variance estimate. One borderline call, whether a three function utility earns a `Features` section, has already been seen going both ways between runs.
+- Every output eval is a single run against a single model, so the recorded scores carry no variance estimate. One borderline call, whether an install section may mention the runtime its install command already implies, has already been seen going both ways between runs.
 - The eight fixture repositories are deliberately minimal stubs. They check structure, licensing, and command grounding, not whether documented behavior matches real behavior.
-- Of the assertions added in the most recent pass, eight of eleven passed with and without the skill, so they guard against regressions rather than measure what the skill contributes.
+- Of the assertions added in iteration 3, eight of eleven passed with and without the skill, so they guard against regressions rather than measure what the skill contributes.
 
 ## 🛠️ Development
 
@@ -95,6 +95,8 @@ awk '/^---$/{c++; next} c>=2' nuxt-style-readme/SKILL.md | wc -c    # body chars
 ```
 
 The workflow divides that character count by four for its token estimate.
+
+Bump `metadata.version` in `SKILL.md` whenever the rules change materially, so an installed copy can be traced to a revision.
 
 See [`nuxt-style-readme/evals/README.md`](./nuxt-style-readme/evals/README.md) for how to run the two eval suites and what each one is meant to catch.
 
