@@ -3,5 +3,5 @@
   "private": true,
   "type": "module",
   "scripts": { "dev": "vite" },
-  "dependencies": { "vue": "^3.5.0" }
+  "dependencies": { "glowline": "file:..", "vue": "^3.5.0" }
 }

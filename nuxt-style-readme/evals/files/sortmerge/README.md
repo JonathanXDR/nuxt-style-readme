@@ -9,7 +9,7 @@ External merge sort for files that do not fit in memory.
 - 🔤 **Custom comparators:** Any comparator that works with `Array.sort` works here.
 - 🧹 **Self-cleaning:** Temporary runs are removed even when the process throws.
 
-## 🚀 Install
+## 🚀 Quick Start
 
 ```bash
 npm install sortmerge

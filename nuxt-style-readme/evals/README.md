@@ -15,7 +15,7 @@ Two suites, matching the two ways this skill can fail.
 
 Run each case twice, once with the skill and once without, each in a fresh context so nothing leaks between runs. Point both at a copy of the fixture, since a run will write a README into it. Then grade every assertion PASS or FAIL with evidence quoted from the output, and compare the two configurations.
 
-The baseline matters more than the absolute score. An assertion that passes without the skill is not measuring the skill. Assertions here were chosen to fail without it: emoji conventions, section omission, license accuracy, and refusal to invent content are exactly what an unguided model gets wrong.
+The baseline matters more than the absolute score. An assertion that passes without the skill is not measuring the skill. Most assertions were chosen to fail without it: emoji conventions, section omission, license accuracy, and refusal to invent content are exactly what an unguided model gets wrong. The later additions recorded in iteration 3 are regression guards rather than discriminators.
 
 Case 13 is the one to watch. It asks for a "comprehensive, professional" README for a trivial CLI, which is the request most likely to produce badges, invented features, and sections with nothing in them.
 
@@ -48,7 +48,7 @@ The baseline's sixteen failures fall into two clusters. Convention drift covers 
 
 Cases 6, 8, 9, 11, and 12 passed identically in both arms. Their assertions still guard against regressions, but on this model they did not discriminate, so read with-versus-baseline deltas there as noise.
 
-Each of those five has since gained assertions resting on a fixture fact an unguided run can get wrong. Case 2 also had an assertion corrected, since `chroma-parse` exports three symbols rather than the two it named. The totals above predate those changes.
+Each of those five, plus case 13, has since gained assertions resting on a fixture fact an unguided run can get wrong. Case 2 also had an assertion corrected, since `chroma-parse` exports three symbols rather than the two it named. The totals above predate those changes.
 
 ## Iteration 3
 
@@ -91,6 +91,14 @@ The first verification pass ran cases 14, 13, and 9 at 25 of 26. Case 14 passed 
 
 The frontmatter description also changed in this revision, from "no badges and no hero artwork" to the conditional phrasing. The 20 of 20 trigger measurement predates that edit and was not re-run: the changed clause describes the output style rather than the activation conditions, and every trigger-bearing phrase is untouched. Treat the trigger score as measured against the previous description until the protocol runs again.
 
+## Iteration 7
+
+A final consistency review with three independent reviewers closed out the chrome revision. Its main finding was a blocker: the refinement rule still ordered unconditional badge and artwork removal from the pre-chrome era, which on a published package with an earned banner and badge block would have stripped exactly what the style now requires. The rule now follows the inclusion tests in both directions. The review also caught a template instruction that would have deleted the required `<!-- Badges -->` marker, a drifted duplicate of the chrome inclusion tests in the style guide, and stale counts and cross references, all fixed.
+
+Case 12 re-ran after its fixture heading moved to `🚀 Quick Start` and passed 9 of 9. The run also added the install-implied runtime sentence again, the same borderline iteration 4 recorded, so with two observations the Prerequisites rule now says not to restate that runtime as prose either.
+
+Trigger pass 3 ran the full corrected-harness protocol against the description as revised in iteration 6: twenty queries, three runs each. All twenty passed, every should-trigger at a rate above one half and every should-not below it, so the iteration 6 caveat is resolved.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.
@@ -105,5 +113,6 @@ That harness has one more trap worth knowing before anyone runs it again. It sen
 | ---- | ------- | ------ |
 | 1 | Stock, empty project root, first tool call only | 11 of 20. Every negative correct, nine of ten positives failed. |
 | 2 | Corrected, real repository root, any-point detection | 20 of 20. Every positive at 3 of 3, every negative at 0 of 3. |
+| 3 | Corrected, re-run after the iteration 6 description change | 20 of 20. Every positive above one half, every negative below it. |
 
-Both passes ran on claude-fable-5 with three runs per query. The description was not changed between them, so pass 2 measures the description exactly as shipped, with nothing tuned against either split.
+All passes ran on claude-fable-5 with three runs per query, with nothing tuned against either split. The description changed in iteration 6, so pass 3 repeated the protocol against the description as it ships. The current trigger score is pass 3.

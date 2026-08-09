@@ -196,7 +196,7 @@
         "evals/files/sortmerge"
       ],
       "assertions": [
-        "The Features, Install, Usage, Configuration, Development, and License sections are all still present",
+        "The Features, Quick Start, Usage, Configuration, Development, and License sections are all still present",
         "The Features heading is still exactly '## Features' with no emoji added to it",
         "The existing heading emojis (🚀, 💻, ⚙️, 🛠️, ⚖️) are unchanged",
         "No new H2 section was added that the repository has no evidence for",
@@ -238,7 +238,7 @@
         "A banner image referencing the .github/assets/banner.svg asset appears before the title",
         "The banner is wrapped in a link to https://glowline.dev",
         "A badge block appears between the banner and the title",
-        "Badges are limited to facts the repository proves, such as npm version, npm downloads, and the MIT license, with no CI, coverage, or ecosystem badge since no such evidence exists",
+        "Badges are limited to facts the repository proves, such as npm version, npm downloads, and the MIT license, with no CI, coverage, or ecosystem badge, since the badge format defines none and the repository gives no reason to add one",
         "Badge images use the reference style with definitions collected at the bottom of the file",
         "A Documentation bullet links to https://glowline.dev",
         "A Playground bullet links to the playground directory",
