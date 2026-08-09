@@ -16,21 +16,19 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🪶 **Cheap to keep loaded:** Keeps `SKILL.md` well inside its budget and loads references only when needed.
 - ✅ **Built-in evals:** Verifies the skill with 96 output assertions plus 20 trigger queries.
 
-## 🚀 Install
+## 🚀 Quick Start
 
-The skill is the [`nuxt-style-readme/`](./nuxt-style-readme) directory. Copy it into wherever your agent looks for skills.
+Install the skill with the [skills CLI](https://skills.sh):
 
 ```bash
-git clone https://github.com/JonathanXDR/nuxt-style-readme-skill.git
-mkdir -p ~/.agents/skills
-cp -r nuxt-style-readme-skill/nuxt-style-readme ~/.agents/skills/
+npx skills add JonathanXDR/nuxt-style-readme-skill
 ```
 
-Keep the directory named `nuxt-style-readme`. The specification requires a skill's `name` field to match the name of the directory containing `SKILL.md`, so renaming the folder invalidates the skill.
+The CLI clones with your existing git credentials, finds [`nuxt-style-readme/`](./nuxt-style-readme), and installs it for the agents you pick. Add `-g` for a user-wide install instead of the current project, and `-y` to skip the prompts.
 
-Common locations are `~/.agents/skills/` and `~/.claude/skills/` for user-wide install, or `.agents/skills/` inside a project. These are conventions rather than part of the specification, which does not mandate where skills live, so check what your own client expects. The [Agent Skills client showcase](https://agentskills.io/clients) links the setup instructions for each one.
+Installing by hand still works: copy [`nuxt-style-readme/`](./nuxt-style-readme) into wherever your agent looks for skills, such as `~/.claude/skills/` or a project's `.agents/skills/`. Keep the directory name, because the specification requires a skill's `name` field to match the directory containing `SKILL.md`.
 
-Nothing here is tied to a particular agent. The skill uses only the fields in the [Agent Skills specification](https://agentskills.io/specification) and no vendor extensions.
+Nothing here is tied to a particular agent. The skill uses only the fields in the [Agent Skills specification](https://agentskills.io/specification) and no vendor extensions, and the [client showcase](https://agentskills.io/clients) links setup instructions for each compatible client.
 
 ## 🧪 Usage
 
