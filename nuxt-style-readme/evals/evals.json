@@ -261,7 +261,7 @@
         "The Documentation bullet still links to https://hoverkit.dev and the Playground bullet still links to the playground directory",
         "No badge was added beyond the existing three",
         "The four feature bullets are preserved in substance",
-        "The H2 sections are still exactly Features, Quick Start, Usage, and License with their existing emojis",
+        "The H2 sections are still exactly Features, Quick Start, Usage, Configuration, Development, and License with their existing emojis",
         "No GitHub alert was added",
         "The response tells the user the README was already close to correct rather than presenting a full rewrite"
       ]
@@ -281,6 +281,7 @@
         "The Features heading carries no emoji and every feature bullet has an emoji and a bold label",
         "Documented capabilities are limited to what src/index.ts exports, such as renderGlyph and the three built-in fonts",
         "The License section states MIT and links the LICENSE file",
+        "The produced README does not present a public npm registry install command, since pixelfont is private and unpublished",
         "No section was added that the repository gives no evidence for, such as Troubleshooting or Examples"
       ]
     }

@@ -36,6 +36,23 @@ import { onHoverIntent } from 'hoverkit'
 const stop = onHoverIntent(card, () => card.classList.add('active'), { delay: 120, tolerance: 6 })
 ```
 
+## ⚙️ Configuration
+
+| Option | Default | Effect |
+| ------ | ------- | ------ |
+| `delay` | `100` | Milliseconds the pointer must settle before the handler fires |
+| `tolerance` | `4` | Pixel radius of movement ignored while settling |
+
+## 🛠️ Development
+
+All checks run through npm scripts:
+
+```bash
+npm run build   # bundle with unbuild
+npm test        # run the test suite with Vitest
+npm run lint    # ESLint
+```
+
 ## ⚖️ License
 
 Licensed under the [MIT license](./LICENSE) © Example Author.

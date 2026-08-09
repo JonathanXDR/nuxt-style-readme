@@ -105,6 +105,16 @@ Two cases now guard the refinement path for chrome, the rule whose blocker itera
 
 The prose punctuation scan that had been run by hand all along now runs in CI, and its first repository-wide pass caught real contamination: a pass 3 trigger run had written a README into the real har2pdf fixture, which sat unnoticed in one commit until the scan flagged its semicolons. The stray file is removed, the committed driver at `scripts/trigger_run.py` now verifies the source repository after every run, and the trap is recorded under Trigger measurement.
 
+## Iteration 9
+
+Three directed refinements landed without a measurement run, since none touches an assertion. Counts that grow with the project round down to a stable floor in feature bullets, 100+ rather than 123, while counts that are themselves the fact stay exact. A feature label may carry a link when the feature has a canonical page, adapted from the nuxt-ai-ready README, with the colon kept inside the bold. And the bullet range widened from four to nine to about four to fifteen, with room past fifteen when the project genuinely earns it. The repository README applies the first two.
+
+## Iteration 10
+
+A delta review of everything since the iteration 7 full review surfaced one real gap and a set of small repairs. The gap: hoverkit's README omitted the Configuration and Development sections its own scripts, options, and release workflow earn under the section rules, so a rule-following run on case 15 had to choose between compliance and the assertion pinning the section list. The fixture now carries both sections and the assertion names all six. The repairs: the counts rule gained a discriminator so small nameable sets stay exact, the bullet range gained its bottom-end escape so a two-capability project is not pressured to pad, a linked feature label now explicitly counts as the first meaningful mention, case 16 gained an assertion against the impossible public npm install for a private package, the prose checker's dash test now honors the inline-code exemption it claimed, and the trigger driver's contamination check diffs against the pre-run state instead of flagging the developer's own edits.
+
+Cases 15 and 16 re-ran after the changes and passed 18 of 18, taking the suite to 124 assertions.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.
