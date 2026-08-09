@@ -48,6 +48,21 @@ The baseline's sixteen failures fall into two clusters. Convention drift covers 
 
 Cases 6, 8, 9, 11, and 12 passed identically in both arms. Their assertions still guard against regressions, but on this model they did not discriminate, so read with-versus-baseline deltas there as noise.
 
+Each of those five has since gained assertions resting on a fixture fact an unguided run can get wrong. Case 2 also had an assertion corrected, since `chroma-parse` exports three symbols rather than the two it named. The totals above predate those changes.
+
+## Iteration 3
+
+The seven cases whose assertions changed were re-run in both arms to test whether the additions measure anything. They mostly do not.
+
+| Scope | With skill | Without skill |
+| ----- | ---------- | ------------- |
+| The eleven added or corrected assertions | 12 of 12 | 9 of 12 |
+| All assertions on those seven cases | 58 of 59 | 45 of 59 |
+
+Only cases 9 and 13 discriminate on the new assertions. Eight of the eleven passed in both arms, which means they are regression guards rather than evidence the skill helps. The three that earned their place are the two `## Features` assertions on case 9, where the baseline wrote no Features section at all, and the Project Structure ban on case 13, where the baseline produced an ASCII file tree for a five file repository. Adding an assertion because a rule is untested is not the same as adding one that separates the arms, and most of these did not.
+
+The run also caught a genuine miss. On case 6 the with-skill README omitted `## Features` for `quickmath`, which contradicts the Features inclusion test, since three named exports are capabilities a user can name. That case passed in iteration 2, so this is run to run variance in a borderline judgment rather than a fixed defect. It is recorded here rather than patched, because one observation is not enough to justify changing a rule.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.

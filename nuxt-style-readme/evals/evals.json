@@ -5,7 +5,9 @@
       "id": 1,
       "prompt": "The README in evals/files/pomo-cli is basically empty. Can you write a proper one?",
       "expected_output": "A short README for a dependency-free Go pomodoro CLI, with a Features list, an install or quick start path, and the four real flags documented. No Prerequisites section beyond Go itself, no Configuration section, no Troubleshooting.",
-      "files": ["evals/files/pomo-cli"],
+      "files": [
+        "evals/files/pomo-cli"
+      ],
       "assertions": [
         "The README documents the flags -work, -break, -rounds, and -notify, and no other flags",
         "The default values shown for -work, -break, and -rounds match main.go (25m, 5m, 4)",
@@ -22,10 +24,12 @@
       "id": 2,
       "prompt": "write a readme for the package in evals/files/chroma-parse please",
       "expected_output": "A README for an npm package covering install, code usage with real imports, a link to the two example files, and the MIT license.",
-      "files": ["evals/files/chroma-parse"],
+      "files": [
+        "evals/files/chroma-parse"
+      ],
       "assertions": [
         "The install command installs the package name 'chroma-parse' exactly as it appears in package.json",
-        "Usage examples import only 'parse' and 'format', the two exports that exist in src/index.ts",
+        "Usage examples import only 'parse', 'format', and the 'Rgb' type, the three exports in src/index.ts",
         "An Examples section links to evals/files/chroma-parse/examples/basic.ts and examples/palette.ts, or to the examples directory",
         "The Examples heading uses the 📦 emoji",
         "The Usage heading uses the 💻 emoji, because this is a library rather than a CLI",
@@ -38,7 +42,9 @@
       "id": 3,
       "prompt": "I'm about to open source evals/files/statuspage. It's a self-hosted uptime monitor. Could you put together the front page documentation for it?",
       "expected_output": "A README with a Prerequisites section covering Postgres, an SMTP endpoint, and Node.js 22, plus a Configuration section documenting the environment variables from .env.example, and an Apache-2.0 license statement.",
-      "files": ["evals/files/statuspage"],
+      "files": [
+        "evals/files/statuspage"
+      ],
       "assertions": [
         "There is a Prerequisites section using the 📋 emoji",
         "Prerequisites mention PostgreSQL and Node.js 22 or newer",
@@ -54,7 +60,9 @@
       "id": 4,
       "prompt": "evals/files/har2pdf needs a readme. the tricky part is that nobody understands why it needs the bootstrap response, so make sure that comes across",
       "expected_output": "A README including a Background section explaining the undocumented reader protocol and why the capture must include the bootstrap response, since that context is required before the usage instructions make sense.",
-      "files": ["evals/files/har2pdf"],
+      "files": [
+        "evals/files/har2pdf"
+      ],
       "assertions": [
         "The README contains a '## Background' heading with no emoji on the heading",
         "The Background section explains that the bootstrap response carries the per-title nonce used to order pages",
@@ -68,7 +76,9 @@
       "id": 5,
       "prompt": "Write the README for evals/files/deltasync. People keep asking why they shouldn't just use rsync.",
       "expected_output": "A README with a Why? section that explains the resumable-transfer problem deltasync solves relative to rsync, without a separate Background section repeating it.",
-      "files": ["evals/files/deltasync"],
+      "files": [
+        "evals/files/deltasync"
+      ],
       "assertions": [
         "The README contains a '## Why?' heading with no emoji on the heading",
         "The Why? section explains that rsync restarts a file from zero when a transfer drops, while deltasync resends only missing chunks",
@@ -81,7 +91,9 @@
       "id": 6,
       "prompt": "quick readme for evals/files/quickmath?",
       "expected_output": "A very short README for a three-function utility library. No Why?, no Background, and no License section, because the repository has no LICENSE file.",
-      "files": ["evals/files/quickmath"],
+      "files": [
+        "evals/files/quickmath"
+      ],
       "assertions": [
         "The README contains neither a 'Why?' nor a 'Background' section",
         "The README documents exactly the three exports clamp, lerp, and remap",
@@ -89,14 +101,18 @@
         "There is a '## Features' heading carrying no emoji",
         "Every H2 other than Features carries exactly one leading emoji",
         "The README does not claim an MIT license",
-        "The README does not state or imply that the project is open source or freely reusable"
+        "The README does not state or imply that the project is open source or freely reusable",
+        "The README documents no build, test, or lint command, since quickmath's package.json has no scripts block",
+        "The README states no Node.js or runtime version requirement, since package.json has no engines field"
       ]
     },
     {
       "id": 7,
       "prompt": "Can you refresh the docs for evals/files/har2pdf? I want people to know up front what it can't do before they depend on it.",
       "expected_output": "A README with a Limitations section drawn from the real constraints in NOTES.md, stated plainly rather than softened.",
-      "files": ["evals/files/har2pdf"],
+      "files": [
+        "evals/files/har2pdf"
+      ],
       "assertions": [
         "There is a Limitations section using the ⚠️ emoji",
         "Limitations include the rotating nonce making old captures unusable",
@@ -110,34 +126,44 @@
       "id": 8,
       "prompt": "evals/files/glyphkit wraps artwork we license from a type foundry and it must never go to the public npm registry. Please write its README.",
       "expected_output": "A README opening with a single alert making the redistribution constraint unmissable, and an install section reflecting the private registry.",
-      "files": ["evals/files/glyphkit"],
+      "files": [
+        "evals/files/glyphkit"
+      ],
       "assertions": [
         "A GitHub alert appears within the first 10 lines of the README",
         "That alert uses the IMPORTANT or CAUTION type, not NOTE or TIP",
         "The alert states that the package must not be published publicly or redistributed",
         "The alert syntax is exactly a blockquote whose first line is '> [!IMPORTANT]' or '> [!CAUTION]'",
         "The README references the private registry https://npm.pkg.github.com from publishConfig",
+        "The README states that the licensed vendor artwork is not committed and must be present at ./vendor before the build runs",
         "The README contains no more than 2 GitHub alerts in total",
-        "No two alerts appear consecutively"
+        "No two alerts appear consecutively",
+        "Build and test commands appear in their bun form, matching the scripts in package.json, with no npm or yarn equivalent"
       ]
     },
     {
       "id": 9,
       "prompt": "Please produce a README for evals/files/chroma-parse. Keep it clean and understated.",
       "expected_output": "A README for a straightforward MIT-licensed parsing library, containing no GitHub alerts at all because nothing about the project is risky, legally constrained, or surprising.",
-      "files": ["evals/files/chroma-parse"],
+      "files": [
+        "evals/files/chroma-parse"
+      ],
       "assertions": [
         "The README contains zero GitHub alerts",
         "The README contains no '> [!' sequence anywhere",
         "The README still documents install and usage",
-        "The README contains no badge images"
+        "The README contains no badge images",
+        "The README has a '## Features' heading with no emoji on the heading itself",
+        "Every bullet under Features begins with an emoji followed by a bold feature name"
       ]
     },
     {
       "id": 10,
       "prompt": "does evals/files/quickmath need a license section in its readme? write the readme however you think is right",
       "expected_output": "A README that omits a License section, or states plainly that no license has been applied, and does not invent one.",
-      "files": ["evals/files/quickmath"],
+      "files": [
+        "evals/files/quickmath"
+      ],
       "assertions": [
         "The README does not name MIT, Apache-2.0, ISC, or any other specific license",
         "The README does not link to a LICENSE file, since none exists",
@@ -148,42 +174,53 @@
       "id": 11,
       "prompt": "Write the README for evals/files/glyphkit and be precise about the licensing, the code is ours but the artwork isn't.",
       "expected_output": "A README whose License section separates the repository's own code from the foundry-licensed artwork and states the redistribution boundary explicitly.",
-      "files": ["evals/files/glyphkit"],
+      "files": [
+        "evals/files/glyphkit"
+      ],
       "assertions": [
         "The License section distinguishes the repository's own code from the vendor artwork",
         "The License section names Northwind Type Foundry as the artwork licensor",
         "The License section states that the artwork may not be redistributed as a standalone asset package",
         "The License section states that the artwork may not be used in a logo or app icon",
         "The README does not describe the project as open source",
-        "The License heading uses the ⚖️ emoji"
+        "The README names no open source license for the repository's own code, since package.json declares the license as UNLICENSED and glyphkit has no LICENSE file",
+        "The License heading uses the ⚖️ emoji",
+        "The README does not link to a LICENSE file, since glyphkit has none, and any link to the artwork terms points to ./VENDOR-TERMS.md"
       ]
     },
     {
       "id": 12,
       "prompt": "Have a look at the README in evals/files/sortmerge and tidy it up if it needs it.",
       "expected_output": "Minimal or no changes. The existing README already follows the style, so the correct response is to leave it substantially intact and say so.",
-      "files": ["evals/files/sortmerge"],
+      "files": [
+        "evals/files/sortmerge"
+      ],
       "assertions": [
         "The Features, Install, Usage, Configuration, Development, and License sections are all still present",
         "The Features heading is still exactly '## Features' with no emoji added to it",
         "The existing heading emojis (🚀, 💻, ⚙️, 🛠️, ⚖️) are unchanged",
         "No new H2 section was added that the repository has no evidence for",
+        "The README still has exactly six H2 sections, with none added",
         "The four existing feature bullets are preserved in substance",
         "No badges were added",
-        "The response tells the user the README was already close to correct rather than presenting a full rewrite"
+        "The response tells the user the README was already close to correct rather than presenting a full rewrite",
+        "No Prerequisites or Requirements section was added for Node.js, even though package.json declares engines node >=20, because npm install already implies the runtime"
       ]
     },
     {
       "id": 13,
       "prompt": "Write a really comprehensive, professional README for evals/files/pomo-cli. I want it to look like a serious open source project.",
       "expected_output": "A README that stays proportional to a small single-file CLI despite the request for comprehensiveness, refusing to invent configuration, troubleshooting, examples, or roadmap content the repository does not support.",
-      "files": ["evals/files/pomo-cli"],
+      "files": [
+        "evals/files/pomo-cli"
+      ],
       "assertions": [
         "The README contains no badge images despite the request for a professional look",
         "The README contains no banner, logo, or centered image block",
         "The README contains no Troubleshooting section, since the repository shows no failure modes",
         "The README contains no Examples section, since the repository contains no examples",
         "The README contains no table of contents or Contents section",
+        "The README contains no Project Structure section and no file tree, since pomo-cli is five files with no directories",
         "The README has 8 or fewer H2 sections despite the request for comprehensiveness",
         "The README does not document a configuration file, since pomo has none",
         "The README does not claim features absent from main.go and notify_darwin.go, such as history tracking, statistics, or plugins",
