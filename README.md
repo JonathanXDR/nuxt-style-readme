@@ -10,11 +10,11 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🧭 **Sections are earned:** Each optional section has an inclusion test checked against the repository, so a small CLI gets four sections and a framework gets nine.
 - 🔍 **Evidence before prose:** Commands, exports, versions, and license claims are read out of the manifest, the source, and the LICENSE file rather than assumed.
 - 🎯 **Scannable feature bullets:** One emoji, a bold name, one sentence of concrete capability, in a format that stays consistent across every repository you apply it to.
-- 📐 **Settled heading conventions:** `## Features` carries no emoji, every other user-facing H2 carries exactly one, and no emoji repeats inside a document.
+- 📐 **Settled heading conventions:** `## Features`, `## Why?`, and `## Background` carry no emoji, every other H2 carries exactly one, and no emoji repeats across H2 headings.
 - 🧩 **Domain sections, not filler:** The skill actively looks for the one or two sections that only your project would have, which is what stops the output reading like a template.
 - 🚦 **Alerts used sparingly:** Held to GitHub's own limit of one or two per document, with severity chosen by consequence and re-checked against the live documentation.
-- 🪶 **Cheap to keep loaded:** `SKILL.md` is 139 lines, well inside the recommended 500 line and 5,000 token budget, with the style guide, section rules, and template loaded only at the step that needs them.
-- ✅ **Ships with its own evals:** Thirteen output cases over eight fixture repositories and twenty trigger queries, last run at 85 of 85 assertions with the skill, 69 of 85 without, and 20 of 20 on triggering.
+- 🪶 **Cheap to keep loaded:** `SKILL.md` is 143 lines, well inside the recommended 500 line and 5,000 token budget, with the style guide, section rules, and template loaded only at the step that needs them.
+- ✅ **Ships with its own evals:** Ninety-six assertions across thirteen output cases over eight fixture repositories, plus twenty trigger queries, with every measured run and its caveats written down rather than summarized.
 
 ## 🚀 Install
 
@@ -79,7 +79,7 @@ uvx --from git+https://github.com/agentskills/agentskills.git#subdirectory=skill
   skills-ref validate ./nuxt-style-readme
 ```
 
-Both check frontmatter validity and naming conventions. Neither checks the 500 line and 5,000 token body budgets. The [`validate.yml`](./.github/workflows/validate.yml) workflow enforces both on every push, so run it or measure locally when editing `SKILL.md`.
+Both check frontmatter validity and naming conventions. Neither checks the 500 line and 5,000 token body budgets. The [`validate.yml`](./.github/workflows/validate.yml) workflow enforces those budgets on `main` and on pull requests, so measure locally when editing `SKILL.md`.
 
 See [`nuxt-style-readme/evals/README.md`](./nuxt-style-readme/evals/README.md) for how to run the two eval suites and what each one is meant to catch.
 
