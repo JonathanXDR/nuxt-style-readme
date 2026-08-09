@@ -22,9 +22,20 @@ FIXTURE_SRC = os.path.join(SKILL_SRC, "evals/files/quickmath")
 TIMEOUT = 120
 
 
+def repo_status() -> str:
+    proc = subprocess.run(
+        ["git", "-C", os.path.dirname(SKILL_SRC), "status", "--porcelain"],
+        capture_output=True, text=True,
+    )
+    if proc.returncode != 0:
+        print("WARNING: git status failed, the source repository cannot be verified", file=sys.stderr)
+    return proc.stdout
+
+
 def main() -> int:
     query = sys.argv[1]
     root = tempfile.mkdtemp(prefix="trigger-")
+    before = repo_status()
     try:
         for entry in os.listdir(FIXTURE_SRC):
             src = os.path.join(FIXTURE_SRC, entry)
@@ -55,13 +66,10 @@ def main() -> int:
 
         # A skip-permissions nested session can wander outside its project root.
         # One run did, and wrote a README into the real har2pdf fixture, so every
-        # run now verifies the source repository afterward.
-        dirty = subprocess.run(
-            ["git", "-C", os.path.dirname(SKILL_SRC), "status", "--porcelain"],
-            capture_output=True, text=True,
-        ).stdout.strip()
-        if dirty:
-            print(f"WARNING: source repository modified during the run:\n{dirty}", file=sys.stderr)
+        # run compares the source repository against its pre-run state.
+        added = sorted(set(repo_status().splitlines()) - set(before.splitlines()))
+        if added:
+            print("WARNING: source repository modified during the run:\n" + "\n".join(added), file=sys.stderr)
 
         triggered = False
         for line in out.splitlines():
