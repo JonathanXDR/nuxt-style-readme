@@ -12,7 +12,7 @@ Skip any section the repository does not earn. Do not reorder without a reason.
 
 | Order | Section | Canonical heading |
 | ----- | ------- | ----------------- |
-| 1 | Title, one-sentence description, at most one alert | `# Title` |
+| 1 | Opening block: chrome when provided, title, description, links, at most one alert | `# Title` |
 | 2 | Why? | `## Why?` |
 | 3 | Features | `## Features` |
 | 4 | Background | `## Background` |

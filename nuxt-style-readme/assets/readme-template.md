@@ -12,11 +12,25 @@ How to use it:
 
 ---
 
+<!-- Banner and badges only when the repository provides them. Delete otherwise.
+     Formats and badge definitions live in references/style-guide.md. -->
+
+[![<name> banner](<in-repo asset path>)](<docs site url>)
+
+[![npm version][npm-version-src]][npm-href]
+[![npm downloads][npm-downloads-src]][npm-href]
+[![License][license-src]][license-href]
+
 # <Title>
 
 <!-- Package name for a publishable package, product name otherwise. -->
 
 <One sentence saying what this is and who it is for.>
+
+<!-- Only when the targets exist. Delete otherwise. -->
+
+- [📖 &nbsp;Documentation](<docs site url>)
+- [👾 &nbsp;Playground](<path or url>)
 
 <!-- At most one alert, only for a legal, safety, or scope caveat. Delete otherwise.
      For private or license-constrained projects the alert can replace the sentence above. -->
@@ -175,3 +189,12 @@ Licensed under the [<license name>](./LICENSE) © <copyright holder>.
 
 <!-- When third party terms apply, add a second paragraph drawing the boundary
      between the code license and those terms. -->
+
+<!-- Badges: keep only when badges are used above, with the definitions from
+     references/style-guide.md filled for this package. Delete otherwise. -->
+
+[npm-version-src]: <badge image url>
+[npm-downloads-src]: <badge image url>
+[npm-href]: <package registry url>
+[license-src]: <badge image url>
+[license-href]: ./LICENSE

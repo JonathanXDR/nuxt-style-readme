@@ -3,8 +3,9 @@ name: nuxt-style-readme
 description: >-
   Writes and refines a repository's README.md in a concise, Nuxt-inspired
   documentation style: sections chosen from what the repository actually
-  contains, scannable feature bullets, emoji-anchored headings, no badges and no
-  hero artwork. Use this skill when the user wants a README created, rewritten,
+  contains, scannable feature bullets, emoji-anchored headings, and a banner,
+  badges, and docs links only when the repository provides them. Use this skill
+  when the user wants a README created, rewritten,
   restructured, tightened, polished, or brought up to date after the code
   changed, when they want a project's front page documentation improved or made
   consistent with their other repositories, or when they point you at a repo and
@@ -14,7 +15,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.2.2"
+  version: "1.3.0"
 ---
 
 # Nuxt-style README
@@ -28,8 +29,8 @@ The style is descended from the Nuxt ecosystem: short introduction, feature-orie
 These hold on every run, for every repository.
 
 - **Evidence or omission.** Every command, package name, environment variable, option, path, version requirement, and capability claim must come from a file you read in this repository. If you cannot point at the source, leave it out.
-- **No badges.** No shields.io, no build status, no npm version, no license badge, no link-reference badge block at the bottom.
-- **No decorative artwork.** No banner, logo, hero image, social card, or centered image block. Imagery that genuinely explains something, such as a screenshot of a GUI or an architecture diagram, stays unless the user asks for its removal.
+- **Chrome is found, never fabricated.** A banner appears only when the repository carries the asset or the user provides one. A badge block appears only for a published package with a release path, or when the user supplies badges, and every badge states a fact the repository proves. A Documentation or Playground bullet appears only when the target exists. Never invent an asset path, a badge, or a link.
+- **No invented imagery.** Never fabricate a screenshot, logo, or diagram. Imagery that genuinely explains something stays unless the user asks for its removal.
 - **`## Features` takes no emoji.** Neither does `## Background` or `## Why?`. Every other user-facing H2 takes one.
 - **Every feature bullet takes an emoji.** See the format below.
 - **Sections are earned.** A section exists because the repository gives you something real to put in it. Never add one to look thorough.
@@ -75,6 +76,7 @@ Before you finish, check each of these against the repository:
 - Package names, import paths, and subpath exports match the manifest exactly.
 - Version and runtime requirements match what the manifest or CI declares.
 - Relative links resolve to files that exist. Prefer `./path` form.
+- The banner asset exists at the referenced path, every badge states a proved fact, and the Documentation and Playground bullets resolve.
 - The license statement matches the LICENSE file, or the manifest `license` field when there is no LICENSE file. Never infer a license, and never write MIT because it is common.
 - No section is empty, and no section restates one above it.
 - Markdown renders: fenced blocks closed, tables aligned, alert syntax exact.
@@ -88,10 +90,13 @@ Review the final diff. The only file that should have changed is the README, plu
 
 The first elements, in this order, with nothing before them:
 
-1. `# Title`. Use the exact package name for a publishable package, otherwise a readable product name.
-2. One sentence saying what the project is. Concrete, no marketing.
-3. At most one GitHub alert, and only when a legal, safety, or scope caveat changes how someone should use the project.
-4. The first H2 the repository earns, in the order from `references/section-rules.md`. Usually that is `## Features`.
+1. Banner image, only when the repository provides the asset, linked to the documentation site when one exists.
+2. Badge block, only badges whose facts the repository proves, in the format from `references/style-guide.md`.
+3. `# Title`. Use the exact package name for a publishable package, otherwise a readable product name.
+4. One sentence saying what the project is. Concrete, no marketing.
+5. `- [📖 &nbsp;Documentation]` and `- [👾 &nbsp;Playground]` bullets, only when the targets exist.
+6. At most one GitHub alert, and only when a legal, safety, or scope caveat changes how someone should use the project.
+7. The first H2 the repository earns, in the order from `references/section-rules.md`. Usually that is `## Features`.
 
 A leading alert can carry the one-sentence description itself when the caveat and the description are the same thought, which is common for private or license-constrained packages.
 
@@ -139,6 +144,7 @@ If writing the README exposes a bug or a contradiction between docs and code, re
 - Inferring features from filenames. A directory named `cache/` is not evidence of a caching feature.
 - Documenting `npm run build` without opening the manifest to see whether that script exists.
 - Assuming MIT instead of reading the LICENSE file, or implying an unlicensed project is open source.
-- Copying the current Nuxt README's structure. Take its principles, not its outline. Nuxt itself uses badges and a banner, which this style does not.
+- Adding a banner the repository does not carry, a badge block to a repository that is not a published package, or a Documentation bullet pointing nowhere. Chrome is found, never fabricated. A LICENSE file alone earns no badge.
+- Copying the current Nuxt README's structure. Take its principles, not its outline.
 - Making the README longer to make it look complete. A shorter README that answers the same questions is the better one.
 - Expanding into a repository-wide cleanup. The README is the deliverable.

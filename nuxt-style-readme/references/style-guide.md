@@ -81,6 +81,38 @@ Name the copyright holder from the LICENSE file, never from a guess.
 
 ## Conditional patterns
 
+### Opening chrome
+
+A banner, badges, and Documentation or Playground bullets open the README only when the repository provides them. The inclusion tests are fixed in `SKILL.md`. The format, adapted from the Nuxt module family:
+
+````markdown
+[![<name> banner](./.github/assets/banner.png)](<docs site url>)
+
+[![npm version][npm-version-src]][npm-href]
+[![npm downloads][npm-downloads-src]][npm-href]
+[![License][license-src]][license-href]
+
+# <Title>
+
+<One sentence.>
+
+- [📖 &nbsp;Documentation](<docs site url>)
+- [👾 &nbsp;Playground](./playground)
+````
+
+Badge images use the reference style, one badge per source line, with the definitions collected at the bottom of the file under a `<!-- Badges -->` comment:
+
+````markdown
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/<package>/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-src]: https://img.shields.io/npm/dm/<package>.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-href]: https://npmjs.com/package/<package>
+[license-src]: https://img.shields.io/npm/l/<package>.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: ./LICENSE
+````
+
+The banner uses the asset committed to the repository and links to the documentation site when one exists, otherwise it stands plain. The badge block belongs to published packages: npm version and downloads badges need a public manifest plus a release path such as a publish workflow, and the license badge rides with them when a LICENSE file exists. A repository that is not a published package gets no badge block unless the user provides one. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
+
 ### Emoji for H2 headings
 
 Pick for meaning, not decoration. Most rows come from the house repositories, the rest extend the same logic to sections those repositories have not needed yet, and reusing them keeps repositories recognizable as one family:
