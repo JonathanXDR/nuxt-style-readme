@@ -21,16 +21,16 @@ Skip any section the repository does not earn. Do not reorder without a reason.
 | 7 | Usage | `## 💻 Usage` / `## 🧪 Usage` |
 | 8 | Examples | `## 📦 Examples` |
 | 9 | Configuration | `## ⚙️ Configuration` / `## ⚙️ Settings` |
-| 10 | Domain sections | project-specific, see below |
+| 10 | Domain sections | project-specific, floats anywhere from Usage down, see below |
 | 11 | How It Works or Architecture | `## 🔧 How It Works` / `## 🏗️ Architecture` |
-| 12 | Project Structure | `## 🗂️ Project Structure` |
+| 12 | Project Structure | `## 📦 Project Structure` |
 | 13 | Troubleshooting | `## 🩹 Troubleshooting` |
 | 14 | Limitations | `## ⚠️ Limitations` |
 | 15 | Development | `## 🛠️ Development` |
 | 16 | Next Steps | `## ⛰️ Next Steps` |
 | 17 | License | `## ⚖️ License` |
 
-`Why?` sits before `Features` because it frames the problem the features answer. `Background` sits after, because it is context you need once you know what the thing is.
+`Why?` sits before `Features` because it frames the problem the features answer. `Background` sits after, because it is context you need once you know what the thing is. The house repositories have no `Why?` yet, so its position is a chosen convention rather than observed evidence.
 
 No emoji may appear on two H2 headings in the same README. If `Examples` and `Project Structure` both exist, `Examples` keeps `📦` and `Project Structure` takes `🗂️`.
 
@@ -38,7 +38,7 @@ No emoji may appear on two H2 headings in the same README. If `Examples` and `Pr
 
 **Include when** the project exposes capabilities a user can name. That covers almost every tool, library, package, application, CLI, and script.
 
-**Omit when** the project is a single function or a data set with nothing to summarize, where the one-sentence description already says everything.
+**Omit when** the project exposes a single capability, where the one-sentence description already is the feature list. Two or more nameable capabilities earn the section even when the description mentions them all.
 
 ## Why?
 
@@ -86,7 +86,7 @@ Every example must be real. Take imports, exports, flags, and signatures from th
 
 **Omit when** there are none. Test fixtures are not examples. A section that links to nothing is worse than no section.
 
-Link directly to each example and say in a few words what it demonstrates.
+Link directly to each example and say in a few words what it demonstrates. Format each entry as `- [Example name](./path): what it demonstrates`.
 
 ## Configuration
 
@@ -98,9 +98,11 @@ Document the options that matter. Do not transcribe an entire schema. A table of
 
 ## Domain sections
 
-The strongest READMEs in this style carry one to three sections named for what the project actually does: `## 🔐 Managing Secrets`, `## 🎨 Icons`, `## 📦 ZIP Structure`, `## 🔑 License key`.
+The strongest READMEs in this style carry one to three sections named for what the project actually does: `## 🔐 Managing Secrets`, `## 🎨 Icons`, `## 📦 ZIP Structure`, `## 🔐 License key`.
 
 **Include when** a meaningful part of the project does not fit any generic heading. Name the section after the thing, pick an emoji that fits its meaning, and place it where a reader would need it.
+
+A domain section never absorbs content that passes a generic inclusion test. Context that fits `Background` goes to `Background`, and a domain section carries what no generic heading fits.
 
 This is what keeps the style from reading as a template.
 
@@ -134,7 +136,7 @@ Use a table of symptom and fix. The symptom is what the user sees, the fix is wh
 
 **Omit when** there is nothing honest to say.
 
-State them plainly. A limitation written as a feature is a lie with extra steps.
+State them plainly. A limitation written as a feature is a lie with extra steps. A workaround does not demote a constraint: state the constraint here and let `Troubleshooting` carry the recovery step.
 
 ## Development
 
@@ -142,9 +144,11 @@ State them plainly. A limitation written as a feature is a lie with extra steps.
 
 **Omit when** the project is a single file with no tooling.
 
-Every command must exist in the manifest scripts or the CI workflow. Contributor-facing detail belongs here and below, not mixed into the user-facing sections above.
+Every command must exist in the manifest scripts, the CI workflow, or tooling the repository declares, such as a Makefile target or a tool configured in the manifest. Contributor-facing detail belongs here and below, not mixed into the user-facing sections above.
 
 Plain H3 subsections work well here: how the pieces fit together, how to add a thing, how to release.
+
+A repository with a `CONTRIBUTING.md` gets a link from this section, not a standalone Contributing section. A standalone section is earned only by real content that no `CONTRIBUTING.md` carries. Support and acknowledgment material folds into `Next Steps` or the introduction rather than taking its own heading.
 
 ## Next Steps
 
@@ -152,7 +156,7 @@ Plain H3 subsections work well here: how the pieces fit together, how to add a t
 
 **Omit when** the entries would only relink sections the reader just passed.
 
-Use an ordered list, most useful action first, each item with its own fitting emoji. Ending with an invitation to open an issue is a good close.
+Use an ordered list, most useful action first, usually with one fitting emoji per item. Ending with an invitation to open an issue is a good close.
 
 ## License
 

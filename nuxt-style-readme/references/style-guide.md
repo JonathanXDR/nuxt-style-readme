@@ -2,7 +2,7 @@
 
 How the README reads and renders. Read this before writing prose.
 
-Conventions are split by how much they bend. Strong defaults hold unless the repository gives you a reason. Conditional patterns depend on a condition you can check. Repository-specific decisions are yours to make from evidence. The last group never applies.
+Conventions are split by how much they bend. Strong defaults hold unless the repository gives you a reason. Conditional patterns depend on a condition you can check. Repository-specific decisions are yours to make from evidence. The last group never applies. In order: voice, prose, headings, code blocks, links, and license wording, then emoji, tables, diagrams, and alerts, then the repository-specific list, then the avoid list.
 
 ## Strong defaults
 
@@ -18,8 +18,8 @@ Second person for instructions. Present tense for behavior: "The build refuses t
 - Prefer a concrete noun to an abstraction. "Keychain entry" beats "credential storage mechanism".
 - Cut phrases that add no information: "simply", "just", "of course", "as you can see", "it is worth noting that".
 - Cut sentences that restate the heading.
-- No em dashes or en dashes as punctuation, and no semicolons in prose. Rewrite. The restriction does not reach code, commands, paths, package names, URLs, version numbers, or quoted material.
-- American spelling, consistently.
+- The dash and semicolon rules are fixed in `SKILL.md` and are not repeated here.
+- Write in the language of the repository's existing documentation. For English, use American spelling unless the existing README is consistently spelled otherwise.
 
 ### Headings
 
@@ -46,7 +46,7 @@ bun run build       # bundle src/ into dist/
 ```
 ````
 
-Put the command first and the explanation after. A reader scanning for the install line should hit it immediately.
+Introduce every code block with one short lead-in sentence ending in a period. Longer explanation goes after the block, so a reader scanning for the install line hits it immediately.
 
 ### Links
 
@@ -56,7 +56,7 @@ Relative links for anything inside the repository, in `./path` form. GitHub reso
 [`scripts/build.ts`](./scripts/build.ts)
 ```
 
-Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Do not link the same target repeatedly. A Next Steps entry may point at a target that was already linked earlier, because every entry in that list is a link by design.
+External links point at the most specific page that answers the reader's question, not the product homepage. Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Do not link the same target repeatedly. A Next Steps entry may point at a target that was already linked earlier, because every entry in that list is a link by design.
 
 Never link a file that does not exist.
 
@@ -83,21 +83,21 @@ Name the copyright holder from the LICENSE file, never from a guess.
 
 ### Emoji for H2 headings
 
-Pick for meaning, not decoration. These are established, and reusing them keeps repositories recognizable as one family:
+Pick for meaning, not decoration. Most rows come from the house repositories, the rest extend the same logic to sections those repositories have not needed yet, and reusing them keeps repositories recognizable as one family:
 
 | Emoji | Section |
 | ----- | ------- |
 | 📋 | Prerequisites |
-| 🚀 | Quick Start, Install, Getting Started |
+| 🚀 | Quick Start, Install |
 | 💻 | Usage, for libraries and packages |
 | 🧪 | Usage, for CLIs, applications, and scripts |
-| 📦 | Examples, packaging, archive contents |
+| 📦 | Examples, Project Structure, packaging, archive contents |
 | ⚙️ | Configuration, Settings |
 | 🔧 | How It Works |
 | 🏗️ | Architecture |
-| 🗂️ | Project Structure |
-| 🔐 | Secrets, credentials, security |
-| 🔑 | License keys, tokens |
+| 🗂️ | Project Structure, when 📦 is already taken |
+| 🔐 | Secrets, credentials, license keys, security |
+| 🔑 | Keys and tokens, when 🔐 is already taken |
 | 🎨 | Icons, themes, visual assets |
 | 🩹 | Troubleshooting |
 | ⚠️ | Limitations |
@@ -158,7 +158,7 @@ Syntax is a blockquote whose first line is the bracketed type in capitals:
 
 GitHub's stated limits, quoted: "Use alerts only when they are crucial for user success and limit them to one or two per article to prevent overloading the reader. Additionally, you should avoid placing alerts consecutively." Also: "Alerts cannot be nested within other elements."
 
-In practice that means one or two per README.
+Default to one or two per README. More are justified only when every alert independently passes the crucial-for-success test and no two sit adjacent. The longest README in this family carries four.
 
 Choose the type by consequence, not by emphasis. A legal or licensing constraint is `IMPORTANT`. An action that can destroy data or expose a secret is `CAUTION`. Something that breaks the install for everyone is `WARNING`. A convenience is `TIP`. Context is `NOTE`.
 

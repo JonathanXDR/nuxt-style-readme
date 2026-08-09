@@ -33,9 +33,9 @@ How to use it:
 
 <!-- No emoji on this heading. One emoji on every bullet. Four to nine bullets. -->
 
-- <emoji> **<Capability>:** <What it does for the reader, in one sentence.>
-- <emoji> **<Capability>:** <What it does for the reader, in one sentence.>
-- <emoji> **<Capability>:** <What it does for the reader, in one sentence.>
+- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
+- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
+- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
 
 ## Background
 
@@ -84,8 +84,8 @@ How to use it:
 
 <!-- Only when runnable examples exist in the repository or are hosted somewhere. -->
 
-- [<Example name>](<path or url>) - <what it demonstrates>
-- [<Example name>](<path or url>) - <what it demonstrates>
+- [<Example name>](<path or url>): <what it demonstrates>
+- [<Example name>](<path or url>): <what it demonstrates>
 
 ## ⚙️ Configuration
 
@@ -115,9 +115,10 @@ How to use it:
 <Stage> ─────── <what it does>
 ```
 
-## 🗂️ Project Structure
+## 📦 Project Structure
 
-<!-- Only when the layout is non-obvious. Every line gets a comment. -->
+<!-- Only when the layout is non-obvious. Every line gets a comment.
+     🗂️ instead when 📦 is already taken by Examples or a packaging section. -->
 
 ```text
 <path>          # <purpose>
@@ -159,7 +160,7 @@ How to use it:
 ## ⛰️ Next Steps
 
 <!-- Only when there is a genuine progression, not a relink of earlier sections.
-     Ordered, most useful first, one emoji each. -->
+     Ordered, most useful first, an emoji per item where one fits. -->
 
 1. <emoji> <Action, linked.>
 2. <emoji> <Action, linked.>

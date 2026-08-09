@@ -14,7 +14,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Nuxt-style README
@@ -29,7 +29,7 @@ These hold on every run, for every repository.
 
 - **Evidence or omission.** Every command, package name, environment variable, option, path, version requirement, and capability claim must come from a file you read in this repository. If you cannot point at the source, leave it out.
 - **No badges.** No shields.io, no build status, no npm version, no license badge, no link-reference badge block at the bottom.
-- **No decorative artwork.** No banner, logo, hero image, social card, or centered image block. Keep existing project imagery only when it genuinely explains something and the user wants it kept.
+- **No decorative artwork.** No banner, logo, hero image, social card, or centered image block. Imagery that genuinely explains something, such as a screenshot of a GUI or an architecture diagram, stays unless the user asks for its removal.
 - **`## Features` takes no emoji.** Neither does `## Background` or `## Why?`. Every other user-facing H2 takes one.
 - **Every feature bullet takes an emoji.** See the format below.
 - **Sections are earned.** A section exists because the repository gives you something real to put in it. Never add one to look thorough.
@@ -47,7 +47,7 @@ Read what materially describes how the project works, which usually includes pac
 
 Read the scripts block before you document a single command. Inventing `npm test` for a repository that uses `bun test` is the most common way this task fails.
 
-The lockfile picks the package manager for every command run inside the repository. `bun.lock` or `bun.lockb` means `bun`, `pnpm-lock.yaml` means `pnpm`, `yarn.lock` means `yarn`, `package-lock.json` means `npm`, and a `packageManager` field in the manifest overrides all of them. The install line a consumer runs against a published package is not bound by this.
+The lockfile picks the package manager for every command run inside the repository. `bun.lock` or `bun.lockb` means `bun`, `pnpm-lock.yaml` means `pnpm`, `yarn.lock` means `yarn`, `package-lock.json` means `npm`, and a `packageManager` field in the manifest overrides all of them. The same logic applies outside JavaScript, where `uv.lock` means uv, `poetry.lock` means Poetry, and `Gemfile.lock` means Bundler. The install line a consumer runs against a published package is not bound by this.
 
 Use version control history only to settle a specific question, such as whether documented behavior is current. Stop once the question is answered.
 
@@ -65,7 +65,7 @@ Read `references/style-guide.md` before writing prose. It covers heading and emo
 
 Read `assets/readme-template.md` only when you are building a README from nothing or substantially restructuring one. It is a skeleton of optional parts, not a form to fill in. Skip it when you are making a targeted revision.
 
-When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite.
+When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite. Preserving what works does not extend to badges and decorative artwork: removing them is part of applying the style, and your summary to the user must say that you removed them.
 
 ### 4. Verify
 
@@ -78,6 +78,7 @@ Before you finish, check each of these against the repository:
 - The license statement matches the LICENSE file, or the manifest `license` field when there is no LICENSE file. Never infer a license, and never write MIT because it is common.
 - No section is empty, and no section restates one above it.
 - Markdown renders: fenced blocks closed, tables aligned, alert syntax exact.
+- Reread once end to end for flow and concision, and cut anything a reader could infer.
 
 If you used any GitHub alert, confirm the current syntax, the supported types, and the usage limits against `https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax`. `references/style-guide.md` records what that page said when this skill was written, which is a starting point and not a substitute for checking. If you cannot reach the page, use the recorded rules and say plainly that live verification was unavailable. Never claim you verified something you did not.
 
@@ -90,7 +91,7 @@ The first elements, in this order, with nothing before them:
 1. `# Title`. Use the exact package name for a publishable package, otherwise a readable product name.
 2. One sentence saying what the project is. Concrete, no marketing.
 3. At most one GitHub alert, and only when a legal, safety, or scope caveat changes how someone should use the project.
-4. `## Features`, or the first section the repository earns.
+4. The first H2 the repository earns, in the order from `references/section-rules.md`. Usually that is `## Features`.
 
 A leading alert can carry the one-sentence description itself when the caveat and the description are the same thought, which is common for private or license-constrained packages.
 
@@ -100,7 +101,7 @@ A leading alert can carry the one-sentence description itself when the caveat an
 - 🎯 **Feature name:** Concise explanation of the concrete capability or benefit.
 ```
 
-One emoji chosen for that specific feature, a short bold name, a colon inside the bold, then one sentence. Be consistent across the list: if one bullet ends in a period, all do.
+One emoji chosen for that specific feature, a short bold name, a colon inside the bold, then one concise line: a dense fragment or a short sentence built from concrete nouns. Be consistent across the list: if one bullet ends in a period, all do.
 
 Lead with the capability. Name what the project does that a reader could not assume. Skip "powerful", "modern", "blazing fast", and "easy to use" unless the repository proves the claim, in which case state the proof instead of the adjective.
 
@@ -126,14 +127,14 @@ If writing the README exposes a bug or a contradiction between docs and code, re
 
 ## Gotchas
 
-- Treating the section list as a checklist instead of running the inclusion tests. Most READMEs land at six to nine H2 sections, and a small single-purpose CLI can be complete at four.
+- Treating the section list as a checklist instead of running the inclusion tests in `references/section-rules.md`.
 - Adding an emoji to `## Features`. It never takes one. `## Background` and `## Why?` never take one either.
 - Forgetting emojis on the individual feature bullets. The heading has none, so every bullet has one.
 - Writing `## Why?` and `## Background` with overlapping content. Pick the one that does the job.
 - Adding `Prerequisites` when the only prerequisite is the language runtime the install command already implies.
 - Adding `Examples` when the repository has no examples, or pointing it at test fixtures that were never meant as examples.
 - Writing `Next Steps` that only relink earlier sections. It must be a progression toward something new.
-- Reaching for an alert to break up the page rather than because the content is crucial for the reader's success. GitHub's limit is one or two per document, never consecutive.
+- Reaching for an alert to break up the page rather than because the content is crucial for the reader's success. GitHub recommends one or two per document, never consecutive, and more are justified only when every alert independently earns its place.
 - Choosing alert severity by how important the sentence feels. `WARNING` and `CAUTION` mean something specific. Check the definitions.
 - Inferring features from filenames. A directory named `cache/` is not evidence of a caching feature.
 - Documenting `npm run build` without opening the manifest to see whether that script exists.
