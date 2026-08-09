@@ -13,6 +13,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 FENCE = re.compile(r"^(\s*)(`{3,})")
 
+# Fixture files allowed to violate the rules on purpose, so a future fixture can
+# exercise the punctuation rules on the refinement path. Repo-relative paths.
+EXEMPT: set[str] = set()
+
 
 def check(path: Path) -> list[str]:
     violations = []
@@ -32,7 +36,7 @@ def check(path: Path) -> list[str]:
         body = re.sub(r"`[^`]*`", "", body)
         body = re.sub(r"\(http[^)]*\)", "", body)
         body = re.sub(r"&[a-z]+;", "", body)
-        if "—" in raw or "–" in raw:
+        if "—" in body or "–" in body:
             violations.append(f"{path.relative_to(REPO)}:{lineno}: em or en dash: {raw.strip()}")
         if " - " in body:
             violations.append(f"{path.relative_to(REPO)}:{lineno}: spaced hyphen: {raw.strip()}")
@@ -44,7 +48,7 @@ def check(path: Path) -> list[str]:
 def main() -> int:
     problems = []
     for path in sorted(REPO.glob("**/*.md")):
-        if ".git" in path.parts:
+        if ".git" in path.parts or str(path.relative_to(REPO)) in EXEMPT:
             continue
         problems.extend(check(path))
     if problems:
