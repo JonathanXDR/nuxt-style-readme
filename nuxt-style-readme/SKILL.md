@@ -14,7 +14,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.2.1"
+  version: "1.2.2"
 ---
 
 # Nuxt-style README

@@ -64,7 +64,7 @@ Keep it to a short bullet list. Mark genuinely optional items as optional.
 
 **Include one of them always.** A README without a path to running the thing has failed.
 
-Use `Quick Start` when there is a clear shortest path from nothing to working, and put the primary command in the first code block. Use `Install` or `Installation` when installation is substantial enough that mixing it with first use would obscure both.
+Default to `Quick Start`, and put the primary command in the first code block. Reach for `Install` or `Installation` only when installation is substantial enough that mixing it with first use would obscure both.
 
 **Never create both** when they would share most of their content. Pick the one that fits and let it carry the whole path.
 
