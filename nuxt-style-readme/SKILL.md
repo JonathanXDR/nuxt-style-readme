@@ -15,7 +15,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.4.0"
+  version: "1.4.1"
 ---
 
 # Nuxt-style README
@@ -66,7 +66,7 @@ Read `references/style-guide.md` before writing prose. It covers opening chrome 
 
 Read `assets/readme-template.md` only when you are building a README from nothing or substantially restructuring one. It is a skeleton of optional parts, not a form to fill in. Skip it when you are making a targeted revision.
 
-When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite. Chrome follows the inclusion tests, not the incumbent README: strip badges stating unproven facts, banners with no committed asset, and Documentation or Playground bullets with dead targets, and say so in your summary. Chrome the repository earns stays, normalized to the format in `references/style-guide.md`.
+When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite. Chrome follows the inclusion tests, not the incumbent README: strip badges stating unproven facts, banners with no committed asset, and Documentation or Playground bullets with dead targets, and say so in your summary. Keep the chrome the repository earns, normalized to the format in `references/style-guide.md`.
 
 ### 4. Verify
 

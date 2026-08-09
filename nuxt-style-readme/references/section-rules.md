@@ -17,7 +17,7 @@ Skip any section the repository does not earn. Do not reorder without a reason.
 | 3 | Features | `## Features` |
 | 4 | Background | `## Background` |
 | 5 | Prerequisites | `## 📋 Prerequisites` |
-| 6 | Quick Start or Installation | `## 🚀 Quick Start` / `## 🚀 Install` |
+| 6 | Quick Start or Install | `## 🚀 Quick Start` / `## 🚀 Install` |
 | 7 | Usage | `## 💻 Usage` / `## 🧪 Usage` |
 | 8 | Examples | `## 📦 Examples` |
 | 9 | Configuration | `## ⚙️ Configuration` / `## ⚙️ Settings` |
@@ -60,11 +60,11 @@ No emoji may appear on two H2 headings in the same README. If `Examples` and `Pr
 
 Keep it to a short bullet list. Mark genuinely optional items as optional.
 
-## Quick Start and Installation
+## Quick Start and Install
 
 **Include one of them always.** A README without a path to running the thing has failed.
 
-Default to `Quick Start`, and put the primary command in the first code block. Reach for `Install` or `Installation` only when installation is substantial enough that mixing it with first use would obscure both.
+Default to `Quick Start`, and put the primary command in the first code block. Reach for `Install` only when installation is substantial enough that mixing it with first use would obscure both.
 
 **Never create both** when they would share most of their content. Pick the one that fits and let it carry the whole path.
 
