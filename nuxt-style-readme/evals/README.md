@@ -7,7 +7,7 @@ Two suites, matching the two ways this skill can fail.
 | `eval_queries.json` | Does the skill activate on the right requests and stay quiet on the wrong ones? |
 | `evals.json` | When it does activate, is the README correct? |
 
-`files/` holds eight small fixture repositories. Each is deliberately minimal and exists to make one decision checkable. `pomo-cli` has a one-line README and no configuration. `quickmath` has no LICENSE. `glyphkit` wraps licensed third party artwork. `sortmerge` already has a good README and should come back nearly untouched.
+`files/` holds nine small fixture repositories. Each is deliberately minimal and exists to make one decision checkable. `pomo-cli` has a one-line README and no configuration. `quickmath` has no LICENSE. `glyphkit` wraps licensed third party artwork. `sortmerge` already has a good README and should come back nearly untouched. `glowline` provides a banner asset, a docs homepage, a playground, and a publish workflow, so it is the positive path for the conditional opening chrome.
 
 ## Output quality
 
@@ -82,6 +82,14 @@ The four failed cases were re-run after these changes and scored 29 of 30. Cases
 The feature bullet rule changed shape by explicit direction: descriptions are now one full present-tense sentence leading with an active verb and ending with a period, labels are one to four words in sentence case, and clauses were added for specific verbs, for reserving "Supports" for compatibility, and for separating automatic behavior from opt-in configuration. This was a directed style decision rather than a fix, so only a spot check ran: cases 1 and 9, one run each, graded with an added shape audit. Both passed every assertion, 15 of 15, and every produced bullet satisfied all three shape properties. The primary READMEs themselves still carry fragment bullets, so the next refresh of those repositories will rewrite their feature lists.
 
 A follow-up tightened length: descriptions stay as short as accuracy allows, aiming for the whole bullet to render on one line, which usually means eight to fifteen words. Case 3 spot-checked the change at 8 of 8, with a maximum of 93 visible characters and 12 words per description across its four bullets.
+
+## Iteration 6
+
+The opening chrome rules changed by explicit direction, modeled on nuxt/scripts and nuxt/image: a linked banner, a reference-style badge block, and Documentation and Playground bullets now open the README when, and only when, the repository provides them. A banner needs the committed asset, badges need a published package with a release path, and each bullet needs a real target. The glowline fixture and case 14 cover the positive path.
+
+The first verification pass ran cases 14, 13, and 9 at 25 of 26. Case 14 passed in full, so found chrome is assembled correctly, and case 9 confirmed nothing leaks into a plain library. The one failure was case 13, where the runner gave pomo-cli a standalone license badge, since the first wording made a LICENSE file alone count as badge evidence. Both Nuxt references derive their license badge from npm, so the rule was tightened: the badge block belongs to published packages, and a LICENSE file alone earns no badge. Case 13 re-ran at 10 of 10.
+
+The frontmatter description also changed in this revision, from "no badges and no hero artwork" to the conditional phrasing. The 20 of 20 trigger measurement predates that edit and was not re-run: the changed clause describes the output style rather than the activation conditions, and every trigger-bearing phrase is untouched. Treat the trigger score as measured against the previous description until the protocol runs again.
 
 ## Trigger measurement
 

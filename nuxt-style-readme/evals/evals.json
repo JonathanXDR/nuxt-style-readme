@@ -226,6 +226,26 @@
         "The README does not claim features absent from main.go and notify_darwin.go, such as history tracking, statistics, or plugins",
         "Any platform claim is limited to macOS, matching the notify_darwin.go build constraint, or is stated as such"
       ]
+    },
+    {
+      "id": 14,
+      "prompt": "Write the README for evals/files/glowline.",
+      "expected_output": "A README that opens with the banner found in .github/assets, evidence-based npm and license badges, the title and one-sentence description, and Documentation and Playground bullets pointing at the homepage and the playground directory.",
+      "files": [
+        "evals/files/glowline"
+      ],
+      "assertions": [
+        "A banner image referencing the .github/assets/banner.svg asset appears before the title",
+        "The banner is wrapped in a link to https://glowline.dev",
+        "A badge block appears between the banner and the title",
+        "Badges are limited to facts the repository proves, such as npm version, npm downloads, and the MIT license, with no CI, coverage, or ecosystem badge since no such evidence exists",
+        "Badge images use the reference style with definitions collected at the bottom of the file",
+        "A Documentation bullet links to https://glowline.dev",
+        "A Playground bullet links to the playground directory",
+        "The Documentation and Playground bullets sit after the one-sentence description and before the first H2",
+        "The Features section covers only capabilities present in src/index.ts, such as the vGlowline directive, the glowline helper, and the colors, thickness, and duration options",
+        "The License section states MIT"
+      ]
     }
   ]
 }
