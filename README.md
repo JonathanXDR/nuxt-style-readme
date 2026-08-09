@@ -24,10 +24,6 @@ Install the skill with the [skills CLI](https://skills.sh):
 npx skills add JonathanXDR/nuxt-style-readme-skill
 ```
 
-The CLI clones with your existing git credentials, finds [`nuxt-style-readme/`](./nuxt-style-readme), and installs it for the agents you pick. Add `-g` for a user-wide install instead of the current project, and `-y` to skip the prompts.
-
-Installing by hand still works: copy [`nuxt-style-readme/`](./nuxt-style-readme) into wherever your agent looks for skills, such as `~/.claude/skills/` or a project's `.agents/skills/`. Keep the directory name, because the specification requires a skill's `name` field to match the directory containing `SKILL.md`.
-
 Nothing here is tied to a particular agent. The skill uses only the fields in the [Agent Skills specification](https://agentskills.io/specification) and no vendor extensions, and the [client showcase](https://agentskills.io/clients) links setup instructions for each compatible client.
 
 ## 🧪 Usage
