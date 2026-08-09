@@ -14,7 +14,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
 ---
 
 # Nuxt-style README
@@ -101,7 +101,7 @@ A leading alert can carry the one-sentence description itself when the caveat an
 - 🎯 **Feature name:** One sentence stating the concrete capability or benefit.
 ```
 
-One emoji chosen for that specific feature, a bold label of one to four words in sentence case, a colon inside the bold, then one full sentence. The label is a noun or adjective phrase naming the capability. The sentence is present tense, leads with an active verb, makes one primary claim, and ends with a period. No dangling fragments: "Uses chezmoi in symlink mode with Go templates for per-machine configuration", not "chezmoi in symlink mode, Go templates for per-machine configs".
+One emoji chosen for that specific feature, a bold label of one to four words in sentence case, a colon inside the bold, then one full sentence. The label is a noun or adjective phrase naming the capability. The sentence is present tense, leads with an active verb, makes one primary claim, ends with a period, and stays as short as accuracy allows. Aim for the whole bullet to render on one line, which usually means a description of eight to fifteen words, and run longer only when precision demands it. No dangling fragments: "Uses chezmoi in symlink mode with Go templates for per-machine configuration", not "chezmoi in symlink mode, Go templates for per-machine configs".
 
 Lead with the capability and order the list from defining to supporting. Name what the project does that a reader could not assume, with the specific verb rather than the generic one, and write "Supports" only when compatibility itself is the feature. State whether behavior is automatic or opt-in, and do not word configuration-dependent behavior as a guarantee. Skip "powerful", "modern", "blazing fast", and "easy to use" unless the repository proves the claim, in which case state the proof instead of the adjective.
 

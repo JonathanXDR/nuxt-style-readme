@@ -81,6 +81,8 @@ The four failed cases were re-run after these changes and scored 29 of 30. Cases
 
 The feature bullet rule changed shape by explicit direction: descriptions are now one full present-tense sentence leading with an active verb and ending with a period, labels are one to four words in sentence case, and clauses were added for specific verbs, for reserving "Supports" for compatibility, and for separating automatic behavior from opt-in configuration. This was a directed style decision rather than a fix, so only a spot check ran: cases 1 and 9, one run each, graded with an added shape audit. Both passed every assertion, 15 of 15, and every produced bullet satisfied all three shape properties. The primary READMEs themselves still carry fragment bullets, so the next refresh of those repositories will rewrite their feature lists.
 
+A follow-up tightened length: descriptions stay as short as accuracy allows, aiming for the whole bullet to render on one line, which usually means eight to fifteen words. Case 3 spot-checked the change at 8 of 8, with a maximum of 93 visible characters and 12 words per description across its four bullets.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.

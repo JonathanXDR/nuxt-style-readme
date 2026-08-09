@@ -7,14 +7,14 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 
 ## Features
 
-- 🧭 **Sections are earned:** Each optional section has an inclusion test checked against the repository, so most READMEs land at six to nine sections and a single-purpose CLI can be complete at four.
-- 🔍 **Evidence before prose:** Commands, exports, versions, and license claims are read out of the manifest, the source, and the LICENSE file rather than assumed.
-- 🎯 **Scannable feature bullets:** One emoji, a bold name, one sentence of concrete capability, in a format that stays consistent across every repository you apply it to.
-- 📐 **Settled heading conventions:** `## Features`, `## Why?`, and `## Background` carry no emoji, every other H2 carries exactly one, and no emoji repeats across H2 headings.
-- 🧩 **Domain sections, not filler:** The skill actively looks for the one to three sections that only your project would have, which is what stops the output reading like a template.
-- 🚦 **Alerts used sparingly:** Defaulting to GitHub's own recommendation of one or two per document, with severity chosen by consequence and re-checked against the live documentation.
-- 🪶 **Cheap to keep loaded:** `SKILL.md` stays well inside the recommended 500 line and 5,000 token budget, with the style guide, section rules, and template loaded only at the step that needs them.
-- ✅ **Ships with its own evals:** 96 assertions across 13 output cases over 8 fixture repositories, plus 20 trigger queries, with the output cases run with and without the skill so the difference is measured rather than asserted.
+- 🧭 **Earned sections:** Includes an optional section only when the repository gives it real content.
+- 🔍 **Evidence before prose:** Reads commands, versions, and license claims out of the repository instead of assuming them.
+- 🎯 **Scannable features:** Formats each feature as one emoji, a bold label, and one concise sentence.
+- 📐 **Settled headings:** Keeps `## Features` bare and gives every other H2 exactly one unrepeated emoji.
+- 🧩 **Domain sections:** Finds the one to three sections that only your project would have.
+- 🚦 **Sparing alerts:** Holds alerts to GitHub's recommended one or two, with severity chosen by consequence.
+- 🪶 **Cheap to keep loaded:** Keeps `SKILL.md` well inside its budget and loads references only when needed.
+- ✅ **Built-in evals:** Verifies the skill with 96 output assertions plus 20 trigger queries.
 
 ## 🚀 Install
 
