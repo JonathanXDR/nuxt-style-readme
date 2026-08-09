@@ -63,15 +63,15 @@ This page is the skill's own output, so it doubles as the worked example.
 ## ⚠️ Limitations
 
 - Every output eval is a single run against a single model, so the recorded scores carry no variance estimate. One borderline call, whether an install section may mention the runtime its install command already implies, has already been seen going both ways between runs.
-- The eight fixture repositories are deliberately minimal stubs. They check structure, licensing, and command grounding, not whether documented behavior matches real behavior.
+- The nine fixture repositories are deliberately minimal stubs. They check structure, licensing, and command grounding, not whether documented behavior matches real behavior.
 - Of the assertions added in iteration 3, eight of eleven passed with and without the skill, so they guard against regressions rather than measure what the skill contributes.
 
 ## 🛠️ Development
 
-Validate against the reference library from the [Agent Skills specification repository](https://github.com/agentskills/agentskills/tree/main/skills-ref). The published package names its executable `agentskills`:
+Validate against the reference library from the [Agent Skills specification repository](https://github.com/agentskills/agentskills/tree/main/skills-ref). The published package still names its executable `agentskills` while upstream has renamed it to `skills-ref`, so the pin keeps the command working until a release ships the new name:
 
 ```bash
-uvx --from skills-ref agentskills validate ./nuxt-style-readme
+uvx --from 'skills-ref==0.1.1' agentskills validate ./nuxt-style-readme
 ```
 
 Installing from the repository source instead keeps the `skills-ref` name that the specification uses:
