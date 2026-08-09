@@ -56,12 +56,26 @@ The seven cases whose assertions changed were re-run in both arms to test whethe
 
 | Scope | With skill | Without skill |
 | ----- | ---------- | ------------- |
-| The eleven added or corrected assertions | 12 of 12 | 9 of 12 |
+| The eleven added assertions plus the one corrected | 12 of 12 | 9 of 12 |
 | All assertions on those seven cases | 58 of 59 | 45 of 59 |
 
-Only cases 9 and 13 discriminate on the new assertions. Eight of the eleven passed in both arms, which means they are regression guards rather than evidence the skill helps. The three that earned their place are the two `## Features` assertions on case 9, where the baseline wrote no Features section at all, and the Project Structure ban on case 13, where the baseline produced an ASCII file tree for a five file repository. Adding an assertion because a rule is untested is not the same as adding one that separates the arms, and most of these did not.
+Only cases 9 and 13 discriminate on the new assertions. Eight of the eleven added assertions passed in both arms, which means they are regression guards rather than evidence the skill helps. The three that earned their place are the two `## Features` assertions on case 9, where the baseline wrote no Features section at all, and the Project Structure ban on case 13, where the baseline produced an ASCII file tree for a five file repository. Adding an assertion because a rule is untested is not the same as adding one that separates the arms, and most of these did not.
 
 The run also caught a genuine miss. On case 6 the with-skill README omitted `## Features` for `quickmath`, which contradicts the Features inclusion test, since three named exports are capabilities a user can name. That case passed in iteration 2, so this is run to run variance in a borderline judgment rather than a fixed defect. It is recorded here rather than patched, because one observation is not enough to justify changing a rule.
+
+## Iteration 4
+
+The skill was revised after a fresh research and review pass: the alert cap became a default with an earned exception, `## 📦 Project Structure` replaced `🗂️` as the canonical heading to match the house repositories, the refinement path now removes badges explicitly and says so to the user, feature bullets ask for a dense line rather than a sentence, and the template's Examples separator became a colon. All thirteen cases were then re-run with the skill, one run each, graded independently per case. The baseline arm was not re-run, since none of the changes alter what an unguided model does, so iteration 2 remains the baseline of record.
+
+The revised skill passed 90 of 96. Two failures trace to fixture incoherence and the other four to three judgment misses against the skill's own rules.
+
+The fixture failures first. On case 12 the runner deleted the Streaming API and Self-cleaning bullets from sortmerge's README because `src/index.ts` was an empty stub that could not evidence them, which is exactly what evidence-or-omission demands. On case 7 the runner documented that the conversion pipeline is not implemented, which was true, since `cli.py` was a `return 0` stub. Both fixtures were made coherent instead of weakening the assertions: sortmerge gained a streaming implementation whose defaults match its Configuration table, and har2pdf gained an argparse entry point and a `convert` module.
+
+Case 6 omitted `## Features` for quickmath again, the same miss iteration 3 recorded and declined to patch. Two observations is a pattern, so the omit clause now reads "a single capability" and states that two or more nameable capabilities earn the section even when the description names them all.
+
+Cases 4 and 7 shared a shape: content that passes two inclusion tests landing in the wrong home. Case 4 put the bootstrap context in a `## 🔐 The Bootstrap Response` domain section instead of `Background`, and case 7 filed the rotating nonce under Troubleshooting as a symptom instead of under Limitations as a constraint. Two precedence sentences were added to the section rules: a domain section never absorbs content that passes a generic inclusion test, and a workaround does not demote a constraint.
+
+The four failed cases were re-run after these changes and scored 29 of 30. Cases 4, 6, and 7 passed in full. The remaining miss is on case 12, where the run added "sortmerge requires Node.js 20 or newer" to the Install section and the grader read the Prerequisites assertion's rationale as banning the sentence, not just the section. It is recorded rather than patched. The assertion's letter was satisfied, the sentence is evidenced by the `engines` field, and one observation of a borderline judgment does not justify a rule. Case 6's first grader died on an API error mid-response, so its verdict comes from an independent re-grade.
 
 ## Trigger measurement
 
