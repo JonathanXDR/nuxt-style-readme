@@ -111,7 +111,7 @@ Badge images use the reference style, one badge per source line, with the defini
 [license-href]: ./LICENSE
 ````
 
-The banner links to the documentation site when one exists, otherwise it stands plain. The badge set is npm version, npm downloads, and license, with the license badge only when a LICENSE file exists. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
+The banner links to the documentation site when one exists, otherwise it stands plain. The badge set is npm version, npm downloads, and license, with the license badge only when a LICENSE file exists. The same three-badge set maps to other registries through the matching shields endpoints, `pypi/v`, `pypi/dm`, and `pypi/l` for a Python package and `crates/v`, `crates/d`, and `crates/l` for a Rust crate, with the same style parameters. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
 
 ### Emoji for H2 headings
 

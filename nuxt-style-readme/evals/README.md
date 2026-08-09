@@ -115,6 +115,21 @@ A delta review of everything since the iteration 7 full review surfaced one real
 
 Cases 15 and 16 re-ran after the changes and passed 18 of 18, taking the suite to 124 assertions.
 
+## Iteration 11
+
+The baseline was re-established from scratch, since the standing comparison dated from iteration 2 and predated the sentence bullets, the chrome rules, three fixtures, and cases 14 through 16, which had never run without the skill at all. All sixteen cases ran once in the baseline arm against the current fixtures and assertions, graded independently per case.
+
+| Configuration | Assertions passed |
+| ------------- | ----------------- |
+| With skill, latest run per case | 124 of 124 |
+| Without skill, this pass | 88 of 124 |
+
+The thirty-six baseline failures repeat the iteration 2 clusters and add chrome. Convention drift is the bulk: an emoji on the Features heading, plain bullets without emoji or bold labels, and missing or wrong H2 emoji across nine cases. The integrity cluster remains the serious one: the baseline again wrote an MIT license for the unlicensed quickmath in both of its cases, gave pomo-cli badges and an Examples section it has no evidence for, missed glyphkit's legal alert entirely, kept pixelfont's impossible npm install line, and rebuilt sortmerge's already-correct README so thoroughly that four preservation assertions failed. Chrome is the new cluster: on glowline the baseline produced a bare banner without the docs link, no reference-style badge block, and no Playground bullet in the right place.
+
+Case 15 passed 9 of 9 in both arms, so an unguided run also preserves hoverkit's already-correct README, and that case guards regressions rather than discriminating. Every other case discriminated in this pass.
+
+Variance remains unmeasured, since every figure here is one run per configuration.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.
