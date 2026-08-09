@@ -7,7 +7,7 @@ How to use it:
 1. Delete every section the repository does not earn. Check each one against `references/section-rules.md`.
 2. Keep the order of what remains.
 3. Replace every `<placeholder>` with something you read in the repository. If you cannot, delete the line. A placeholder filled with a plausible guess is worse than a missing section.
-4. Delete every `<!-- -->` comment. They are instructions to you, not content.
+4. Delete every `<!-- -->` comment. They are instructions to you, not content. The one exception is the `<!-- Badges -->` marker at the bottom, which is content and stays whenever badges are used.
 5. Rename and re-emoji headings to fit the project. `⚙️ Configuration` may be `⚙️ Settings`. `🎨 Icons` may be anything the project is actually about.
 
 ---
@@ -190,8 +190,10 @@ Licensed under the [<license name>](./LICENSE) © <copyright holder>.
 <!-- When third party terms apply, add a second paragraph drawing the boundary
      between the code license and those terms. -->
 
-<!-- Badges: keep only when badges are used above, with the definitions from
-     references/style-guide.md filled for this package. Delete otherwise. -->
+<!-- Keep the marker line and definitions below only when badges are used above,
+     filled from references/style-guide.md for this package. Delete otherwise. -->
+
+<!-- Badges -->
 
 [npm-version-src]: <badge image url>
 [npm-downloads-src]: <badge image url>

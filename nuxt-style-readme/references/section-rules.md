@@ -12,7 +12,7 @@ Skip any section the repository does not earn. Do not reorder without a reason.
 
 | Order | Section | Canonical heading |
 | ----- | ------- | ----------------- |
-| 1 | Opening block: chrome when provided, title, description, links, at most one alert | `# Title` |
+| 1 | Opening block: chrome and links when the repository provides them, title, description, at most one alert | `# Title` |
 | 2 | Why? | `## Why?` |
 | 3 | Features | `## Features` |
 | 4 | Background | `## Background` |
@@ -56,7 +56,7 @@ No emoji may appear on two H2 headings in the same README. If `Examples` and `Pr
 
 **Include when** the user must have something in place before the install command will work: an account, a credential, a license key, a service, a permission, specific hardware, a supported platform, or a runtime the install step does not provide.
 
-**Omit when** the only requirement is the language runtime that the install command already implies. `npm install` does not need a bullet telling the reader to install Node.js.
+**Omit when** the only requirement is the language runtime that the install command already implies. `npm install` does not need a bullet telling the reader to install Node.js. When that is the only requirement, do not restate the runtime as prose elsewhere either, since a version floor from `engines` is documentation the manifest already carries.
 
 Keep it to a short bullet list. Mark genuinely optional items as optional.
 

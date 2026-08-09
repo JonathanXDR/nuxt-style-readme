@@ -2,7 +2,7 @@
 
 How the README reads and renders. Read this before writing prose.
 
-Conventions are split by how much they bend. Strong defaults hold unless the repository gives you a reason. Conditional patterns depend on a condition you can check. Repository-specific decisions are yours to make from evidence. The last group never applies. In order: voice, prose, headings, code blocks, links, and license wording, then emoji, tables, diagrams, and alerts, then the repository-specific list, then the avoid list.
+Conventions are split by how much they bend. Strong defaults hold unless the repository gives you a reason. Conditional patterns depend on a condition you can check. Repository-specific decisions are yours to make from evidence. The last group never applies. In order: voice, prose, headings, code blocks, links, and license wording, then opening chrome, emoji, tables, diagrams, and alerts, then the repository-specific list, then the avoid list.
 
 ## Strong defaults
 
@@ -46,7 +46,7 @@ bun run build       # bundle src/ into dist/
 ```
 ````
 
-Introduce every code block with one short lead-in sentence ending in a period. Longer explanation goes after the block, so a reader scanning for the install line hits it immediately.
+Introduce every code block with one short lead-in sentence, ending in a period, or in a colon when the block completes the sentence. Longer explanation goes after the block, so a reader scanning for the install line hits it immediately.
 
 ### Links
 
@@ -111,7 +111,7 @@ Badge images use the reference style, one badge per source line, with the defini
 [license-href]: ./LICENSE
 ````
 
-The banner uses the asset committed to the repository and links to the documentation site when one exists, otherwise it stands plain. The badge block belongs to published packages: npm version and downloads badges need a public manifest plus a release path such as a publish workflow, and the license badge rides with them when a LICENSE file exists. A repository that is not a published package gets no badge block unless the user provides one. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
+The banner links to the documentation site when one exists, otherwise it stands plain. The badge set is npm version, npm downloads, and license, with the license badge only when a LICENSE file exists. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
 
 ### Emoji for H2 headings
 
@@ -211,7 +211,7 @@ Decide these from the repository, not from a rule:
 
 ## Avoid
 
-A final sweep before you finish. The badge and artwork rules live in `SKILL.md` and are not repeated here.
+A final sweep before you finish. The chrome inclusion tests live in `SKILL.md`, and the formats are under Opening chrome above.
 
 - A table of contents. GitHub generates an outline from the headings.
 - HTML anchor tags around headings. GitHub already generates anchors.

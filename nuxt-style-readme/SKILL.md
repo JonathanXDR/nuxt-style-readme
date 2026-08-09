@@ -15,7 +15,7 @@ description: >-
   documentation pages, or marketing copy.
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
 ---
 
 # Nuxt-style README
@@ -62,11 +62,11 @@ Resolve ordinary choices yourself from repository evidence and the rules in this
 
 ### 3. Draft
 
-Read `references/style-guide.md` before writing prose. It covers heading and emoji conventions, feature bullets, tables, code blocks, diagrams, linking, tone, and license wording.
+Read `references/style-guide.md` before writing prose. It covers opening chrome formats, heading and emoji conventions, tables, code blocks, diagrams, linking, tone, and license wording.
 
 Read `assets/readme-template.md` only when you are building a README from nothing or substantially restructuring one. It is a skeleton of optional parts, not a form to fill in. Skip it when you are making a targeted revision.
 
-When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite. Preserving what works does not extend to badges and decorative artwork: removing them is part of applying the style, and your summary to the user must say that you removed them.
+When refining an existing README, preserve what already works. A strong README should receive small, surgical edits, not a rewrite. Chrome follows the inclusion tests, not the incumbent README: strip badges stating unproven facts, banners with no committed asset, and Documentation or Playground bullets with dead targets, and say so in your summary. Chrome the repository earns stays, normalized to the format in `references/style-guide.md`.
 
 ### 4. Verify
 
@@ -94,7 +94,7 @@ The first elements, in this order, with nothing before them:
 2. Badge block, only badges whose facts the repository proves, in the format from `references/style-guide.md`.
 3. `# Title`. Use the exact package name for a publishable package, otherwise a readable product name.
 4. One sentence saying what the project is. Concrete, no marketing.
-5. `- [📖 &nbsp;Documentation]` and `- [👾 &nbsp;Playground]` bullets, only when the targets exist.
+5. Documentation and Playground bullets, only when the targets exist, in the format from `references/style-guide.md`.
 6. At most one GitHub alert, and only when a legal, safety, or scope caveat changes how someone should use the project.
 7. The first H2 the repository earns, in the order from `references/section-rules.md`. Usually that is `## Features`.
 
@@ -106,7 +106,7 @@ A leading alert can carry the one-sentence description itself when the caveat an
 - 🎯 **Feature name:** One sentence stating the concrete capability or benefit.
 ```
 
-One emoji chosen for that specific feature, a bold label of one to four words in sentence case, a colon inside the bold, then one full sentence. The label is a noun or adjective phrase naming the capability. The sentence is present tense, leads with an active verb, makes one primary claim, ends with a period, and stays as short as accuracy allows. Aim for the whole bullet to render on one line, which usually means a description of eight to fifteen words, and run longer only when precision demands it. No dangling fragments: "Uses chezmoi in symlink mode with Go templates for per-machine configuration", not "chezmoi in symlink mode, Go templates for per-machine configs".
+One emoji chosen for that specific feature, with no emoji appearing twice in the list, then a bold label of one to four words in sentence case, a colon inside the bold, then one full sentence. The label is a noun or adjective phrase naming the capability. The sentence is present tense, leads with an active verb, makes one primary claim, ends with a period, and stays as short as accuracy allows. Aim for the whole bullet to render on one line, which usually means a description of eight to fifteen words, and run longer only when precision demands it. No dangling fragments: "Uses chezmoi in symlink mode with Go templates for per-machine configuration", not "chezmoi in symlink mode, Go templates for per-machine configs".
 
 Lead with the capability and order the list from defining to supporting. Name what the project does that a reader could not assume, with the specific verb rather than the generic one, and write "Supports" only when compatibility itself is the feature. State whether behavior is automatic or opt-in, and do not word configuration-dependent behavior as a guarantee. Skip "powerful", "modern", "blazing fast", and "easy to use" unless the repository proves the claim, in which case state the proof instead of the adjective.
 
