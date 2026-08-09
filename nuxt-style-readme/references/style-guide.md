@@ -183,7 +183,7 @@ A final sweep before you finish. The badge and artwork rules live in `SKILL.md` 
 
 - A table of contents. GitHub generates an outline from the headings.
 - HTML anchor tags around headings. GitHub already generates anchors.
-- "Powerful", "modern", "blazing fast", "seamless", "robust", "easy to use", "out of the box", and "leverage" as a verb.
+- "Powerful", "modern", "blazing fast", "seamless", "robust", "smart", "advanced", "flexible", "optimized", "easy to use", "out of the box", and "leverage" as a verb, unless the surrounding sentence makes the concrete meaning explicit.
 - Sections whose only content is a link to another section.
 - Explaining what a reader of this project already knows. A Rust crate's README does not explain what Cargo is.
 - Filler transitions: "In this section we will", "Let's dive in", "Now that we have covered".

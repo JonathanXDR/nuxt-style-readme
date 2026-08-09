@@ -77,6 +77,10 @@ Cases 4 and 7 shared a shape: content that passes two inclusion tests landing in
 
 The four failed cases were re-run after these changes and scored 29 of 30. Cases 4, 6, and 7 passed in full. The remaining miss is on case 12, where the run added "sortmerge requires Node.js 20 or newer" to the Install section and the grader read the Prerequisites assertion's rationale as banning the sentence, not just the section. It is recorded rather than patched. The assertion's letter was satisfied, the sentence is evidenced by the `engines` field, and one observation of a borderline judgment does not justify a rule. Case 6's first grader died on an API error mid-response, so its verdict comes from an independent re-grade.
 
+## Iteration 5
+
+The feature bullet rule changed shape by explicit direction: descriptions are now one full present-tense sentence leading with an active verb and ending with a period, labels are one to four words in sentence case, and clauses were added for specific verbs, for reserving "Supports" for compatibility, and for separating automatic behavior from opt-in configuration. This was a directed style decision rather than a fix, so only a spot check ran: cases 1 and 9, one run each, graded with an added shape audit. Both passed every assertion, 15 of 15, and every produced bullet satisfied all three shape properties. The primary READMEs themselves still carry fragment bullets, so the next refresh of those repositories will rewrite their feature lists.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.

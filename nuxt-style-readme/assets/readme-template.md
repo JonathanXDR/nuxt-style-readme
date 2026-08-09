@@ -33,9 +33,9 @@ How to use it:
 
 <!-- No emoji on this heading. One emoji on every bullet. Four to nine bullets. -->
 
-- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
-- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
-- <emoji> **<Capability>:** <What it does for the reader, in one concise line.>
+- <emoji> **<Capability>:** <One present-tense sentence stating what it does for the reader.>
+- <emoji> **<Capability>:** <One present-tense sentence stating what it does for the reader.>
+- <emoji> **<Capability>:** <One present-tense sentence stating what it does for the reader.>
 
 ## Background
 
