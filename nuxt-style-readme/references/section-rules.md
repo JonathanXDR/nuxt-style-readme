@@ -34,8 +34,6 @@ Skip any section the repository does not earn. Do not reorder without a reason.
 
 No emoji may appear on two H2 headings in the same README. If `Examples` and `Project Structure` both exist, `Examples` keeps `📦` and `Project Structure` takes `🗂️`.
 
-Two shapes recur often enough to be worth naming. An end-user tool, such as a CLI, an application, or a userscript, usually earns `📋 Prerequisites`, `🚀 Quick Start`, `🧪 Usage`, and `⛰️ Next Steps`. A published library or package usually earns a single `🚀 Install` with prerequisites folded into its prose, `💻 Usage`, and a `🛠️ Development` section carrying the contributor recipes, with no Next Steps. Neither shape is a rule. Run the inclusion tests either way, and let a mismatch win over the shape.
-
 ## Features
 
 **Include when** the project exposes capabilities a user can name. That covers almost every tool, library, package, application, CLI, and script.
@@ -158,9 +156,9 @@ Use an ordered list, most useful action first, each item with its own fitting em
 
 ## License
 
-**Include when** the repository has a LICENSE file, or when licensing materially affects use.
+**Include when** the repository has a LICENSE file, a `license` field in its manifest, or licensing that materially affects use.
 
-Use the actual license. Read the file. Never infer one.
+Use the actual license. Read the LICENSE file. A manifest that declares a license without shipping a LICENSE file still licenses the project, so name that license, link nothing, and leave the copyright holder out, because no file names one. `UNLICENSED` in a manifest means the opposite: the project is not licensed for reuse. Never infer a license from anything else.
 
 When third party assets, data, APIs, or paid content carry different terms than the code, say so in a separate sentence or paragraph and make the boundary explicit.
 

@@ -39,11 +39,15 @@ These hold on every run, for every repository.
 
 ### 1. Read the repository
 
-Read the existing README first, to know what it claims and what is worth keeping. Then do not work from it alone. It is a claim about the project, not evidence.
+Do not work from the existing README alone. It is a claim about the project, not evidence. Read it first so you know what it asserts, then carry a line forward only after you have verified it against a file.
+
+If it carries generator markers such as `<!-- commands -->`, `<!-- ALL-CONTRIBUTORS-LIST:START -->`, or `<!-- START doctoc -->`, a script owns that block. Leave the markers and everything between them untouched, even when the content breaks a rule here, and tell the user instead.
 
 Read what materially describes how the project works, which usually includes package manifests and lockfiles, workspace configuration, entry points (CLI, application, or public API), source that implements the headline behavior, configuration files and schemas, environment variable definitions, scripts, tests, examples and playgrounds, CI workflows, release configuration, the license file, and any existing contributing or architecture documentation.
 
 Read the scripts block before you document a single command. Inventing `npm test` for a repository that uses `bun test` is the most common way this task fails.
+
+The lockfile picks the package manager for every command run inside the repository. `bun.lock` or `bun.lockb` means `bun`, `pnpm-lock.yaml` means `pnpm`, `yarn.lock` means `yarn`, `package-lock.json` means `npm`, and a `packageManager` field in the manifest overrides all of them. The install line a consumer runs against a published package is not bound by this.
 
 Use version control history only to settle a specific question, such as whether documented behavior is current. Stop once the question is answered.
 
@@ -71,7 +75,7 @@ Before you finish, check each of these against the repository:
 - Package names, import paths, and subpath exports match the manifest exactly.
 - Version and runtime requirements match what the manifest or CI declares.
 - Relative links resolve to files that exist. Prefer `./path` form.
-- The license statement matches the actual LICENSE file. Never infer a license, and never write MIT because it is common.
+- The license statement matches the LICENSE file, or the manifest `license` field when there is no LICENSE file. Never infer a license, and never write MIT because it is common.
 - No section is empty, and no section restates one above it.
 - Markdown renders: fenced blocks closed, tables aligned, alert syntax exact.
 
@@ -122,14 +126,14 @@ If writing the README exposes a bug or a contradiction between docs and code, re
 
 ## Gotchas
 
-- Treating the section list as a checklist instead of running the inclusion tests.
+- Treating the section list as a checklist instead of running the inclusion tests. Most READMEs land at six to nine H2 sections, and a small single-purpose CLI can be complete at four.
 - Adding an emoji to `## Features`. It never takes one. `## Background` and `## Why?` never take one either.
 - Forgetting emojis on the individual feature bullets. The heading has none, so every bullet has one.
 - Writing `## Why?` and `## Background` with overlapping content. Pick the one that does the job.
 - Adding `Prerequisites` when the only prerequisite is the language runtime the install command already implies.
 - Adding `Examples` when the repository has no examples, or pointing it at test fixtures that were never meant as examples.
 - Writing `Next Steps` that only relink earlier sections. It must be a progression toward something new.
-- Reaching for an alert to break up the page rather than because the content is crucial for the reader's success.
+- Reaching for an alert to break up the page rather than because the content is crucial for the reader's success. GitHub's limit is one or two per document, never consecutive.
 - Choosing alert severity by how important the sentence feels. `WARNING` and `CAUTION` mean something specific. Check the definitions.
 - Inferring features from filenames. A directory named `cache/` is not evidence of a caching feature.
 - Documenting `npm run build` without opening the manifest to see whether that script exists.

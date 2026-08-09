@@ -18,7 +18,7 @@ Second person for instructions. Present tense for behavior: "The build refuses t
 - Prefer a concrete noun to an abstraction. "Keychain entry" beats "credential storage mechanism".
 - Cut phrases that add no information: "simply", "just", "of course", "as you can see", "it is worth noting that".
 - Cut sentences that restate the heading.
-- The dash and semicolon rules are a non-negotiable in `SKILL.md` and apply to every sentence you write.
+- No em dashes or en dashes as punctuation, and no semicolons in prose. Rewrite. The restriction does not reach code, commands, paths, package names, URLs, version numbers, or quoted material.
 - American spelling, consistently.
 
 ### Headings
@@ -50,13 +50,13 @@ Put the command first and the explanation after. A reader scanning for the insta
 
 ### Links
 
-Relative links for anything inside the repository, in `./path` form. GitHub resolves these against the current branch, and they survive a clone.
+Relative links for anything inside the repository, in `./path` form. GitHub resolves these against the current branch, and they survive a clone. Paths resolve from the directory holding the README, not the repository root. A README in `packages/core/` links its own source as `./src/index.ts` and the repository license as `../../LICENSE`.
 
 ```markdown
 [`scripts/build.ts`](./scripts/build.ts)
 ```
 
-Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Linking a target again is fine at a point where the reader acts on it, such as a Next Steps entry. Do not scatter repeated links through running prose.
+Link the first meaningful mention of an external tool, format, or standard, then use the bare name afterward. Do not link the same target repeatedly. A Next Steps entry may point at a target that was already linked earlier, because every entry in that list is a link by design.
 
 Never link a file that does not exist.
 
@@ -107,7 +107,7 @@ Pick for meaning, not decoration. These are established, and reusing them keeps 
 
 For a section not on this list, choose an emoji a reader recognizes instantly and can connect to the heading without thinking. Avoid anything abstract, ornamental, or clever.
 
-One emoji per H2, and never the same emoji on two H2 headings. Feature bullets follow the same uniqueness rule among themselves. An emoji may repeat across levels, such as a bullet echoing an H2, when it is the honest fit for both.
+One emoji per H2. Uniqueness is counted within a list, not across the document: no emoji appears twice among the H2 headings, and none appears twice among the feature bullets. A bullet may carry the same emoji as an H2.
 
 ### Tables
 
