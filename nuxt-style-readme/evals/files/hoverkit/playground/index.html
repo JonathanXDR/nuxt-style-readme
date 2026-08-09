@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <div id="card" style="width: 200px; height: 120px; background: #eee">Hover me</div>
+    <script type="module">
+      import { onHoverIntent } from 'hoverkit'
+
+      const card = document.querySelector('#card')
+      onHoverIntent(card, () => card.style.background = '#38bdf8', { delay: 120 })
+    </script>
+  </body>
+</html>

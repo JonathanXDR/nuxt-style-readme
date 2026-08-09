@@ -7,7 +7,7 @@ Two suites, matching the two ways this skill can fail.
 | `eval_queries.json` | Does the skill activate on the right requests and stay quiet on the wrong ones? |
 | `evals.json` | When it does activate, is the README correct? |
 
-`files/` holds nine small fixture repositories. Each is deliberately minimal and exists to make one decision checkable. `pomo-cli` has a one-line README and no configuration. `quickmath` has no LICENSE. `glyphkit` wraps licensed third party artwork. `sortmerge` already has a good README and should come back nearly untouched. `glowline` provides a banner asset, a docs homepage, a playground, and a publish workflow, so it is the positive path for the conditional opening chrome.
+`files/` holds eleven small fixture repositories. Each is deliberately minimal and exists to make one decision checkable. `pomo-cli` has a one-line README and no configuration. `quickmath` has no LICENSE. `glyphkit` wraps licensed third party artwork. `sortmerge` already has a good README and should come back nearly untouched. `glowline` provides a banner asset, a docs homepage, a playground, and a publish workflow, so it is the positive path for the conditional opening chrome. `hoverkit` already carries a fully earned chrome opening that a refinement must preserve, and `pixelfont` carries unearned chrome, badges without a publish path and a banner without an asset, that a refinement must remove and disclose.
 
 ## Output quality
 
@@ -99,6 +99,12 @@ Case 12 re-ran after its fixture heading moved to `🚀 Quick Start` and passed 
 
 Trigger pass 3 ran the full corrected-harness protocol against the description as revised in iteration 6: twenty queries, three runs each. All twenty passed, every should-trigger at a rate above one half and every should-not below it, so the iteration 6 caveat is resolved.
 
+## Iteration 8
+
+Two cases now guard the refinement path for chrome, the rule whose blocker iteration 7 fixed without coverage. Case 15 gives hoverkit, a published package whose README already carries the earned banner, badges, and bullets, a tighten-the-wording request, and every piece of chrome must survive. Case 16 gives pixelfont, a private package whose README carries badges without a publish path and a banner without an asset, a tidy-up request, and the chrome must go with the removal stated to the user. Both passed in full on their first run, 9 of 9 and 8 of 8, taking the suite to 123 assertions over 16 cases and eleven fixtures.
+
+The prose punctuation scan that had been run by hand all along now runs in CI, and its first repository-wide pass caught real contamination: a pass 3 trigger run had written a README into the real har2pdf fixture, which sat unnoticed in one commit until the scan flagged its semicolons. The stray file is removed, the committed driver at `scripts/trigger_run.py` now verifies the source repository after every run, and the trap is recorded under Trigger measurement.
+
 ## Trigger measurement
 
 The documented three-runs-per-query protocol was executed twice against the twenty queries, because the first pass exposed a harness artifact rather than a description problem.
@@ -115,4 +121,6 @@ That harness has one more trap worth knowing before anyone runs it again. It sen
 | 2 | Corrected, real repository root, any-point detection | 20 of 20. Every positive at 3 of 3, every negative at 0 of 3. |
 | 3 | Corrected, re-run after the iteration 6 description change | 20 of 20. Every positive above one half, every negative below it. |
 
-All passes ran on claude-fable-5 with three runs per query, with nothing tuned against either split. The description changed in iteration 6, so pass 3 repeated the protocol against the description as it ships. The current trigger score is pass 3.
+All passes ran on claude-fable-5 with three runs per query, with nothing tuned against either split. The description changed in iteration 6, so pass 3 repeated the protocol against the description as it ships. The current trigger score is pass 3. The driver is committed at [`scripts/trigger_run.py`](../../scripts/trigger_run.py), one query per invocation, printing TRIGGERED or NOT_TRIGGERED.
+
+The harness has a third trap beyond the two above. A nested session running with permissions skipped can wander outside its temporary project root: one pass 3 run, given the query that names har2pdf, located the real fixture on disk and wrote a README into it. The committed driver now checks the source repository for modifications after every run and warns loudly. Verify `git status` is clean after any harness campaign before staging eval directories wholesale.

@@ -16,6 +16,8 @@ jobs:
         # renamed it to skills-ref on main, so the pin keeps the invocation working
         # until a release ships the new name.
         run: uvx --from 'skills-ref==0.1.1' agentskills validate ./nuxt-style-readme
+      - name: Check prose punctuation
+        run: python3 scripts/check_prose.py
       - name: Check SKILL.md size budgets
         run: |
           lines=$(wc -l < nuxt-style-readme/SKILL.md)

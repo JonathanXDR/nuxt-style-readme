@@ -14,7 +14,7 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🧩 **Domain sections:** Finds the one to three sections that only your project would have.
 - 🚦 **Sparing alerts:** Holds alerts to GitHub's recommended one or two, with severity chosen by consequence.
 - 🪶 **Cheap to keep loaded:** Keeps `SKILL.md` well inside its budget and loads references only when needed.
-- ✅ **Built-in evals:** Verifies the skill with 106 output assertions plus 20 trigger queries.
+- ✅ **Built-in evals:** Verifies the skill with 123 output assertions plus 20 trigger queries.
 
 ## 🚀 Quick Start
 

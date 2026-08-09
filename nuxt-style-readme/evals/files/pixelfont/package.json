@@ -1,0 +1,16 @@
+{
+  "name": "pixelfont",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Bitmap font rasterizer for retro UIs",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": { "import": "./src/index.ts" }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run"
+  },
+  "devDependencies": { "tsdown": "^0.6.0", "vitest": "^3.0.0" }
+}

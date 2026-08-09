@@ -246,6 +246,43 @@
         "The Features section covers only capabilities present in src/index.ts, such as the vGlowline directive, the glowline helper, and the colors, thickness, and duration options",
         "The License section states MIT"
       ]
+    },
+    {
+      "id": 15,
+      "prompt": "Tighten the wording in evals/files/hoverkit's README if anything needs it.",
+      "expected_output": "Minimal edits that preserve the existing earned chrome: the banner, the three badges with their reference definitions, and the Documentation and Playground bullets all survive.",
+      "files": [
+        "evals/files/hoverkit"
+      ],
+      "assertions": [
+        "The banner image referencing .github/assets/banner.svg and its link to https://hoverkit.dev are still present before the title",
+        "The npm version, npm downloads, and License badges are all still present between the banner and the title",
+        "The reference-style badge definitions and the '<!-- Badges -->' marker are still at the bottom of the file",
+        "The Documentation bullet still links to https://hoverkit.dev and the Playground bullet still links to the playground directory",
+        "No badge was added beyond the existing three",
+        "The four feature bullets are preserved in substance",
+        "The H2 sections are still exactly Features, Quick Start, Usage, and License with their existing emojis",
+        "No GitHub alert was added",
+        "The response tells the user the README was already close to correct rather than presenting a full rewrite"
+      ]
+    },
+    {
+      "id": 16,
+      "prompt": "Can you tidy up the readme in evals/files/pixelfont?",
+      "expected_output": "A README with the unearned chrome removed: no badges for a private package with no publish path, no banner whose asset does not exist, with the removal stated to the user.",
+      "files": [
+        "evals/files/pixelfont"
+      ],
+      "assertions": [
+        "The produced README contains no badge images, since pixelfont is a private package with no publish path",
+        "The banner image referencing the missing ./assets/banner.png is gone",
+        "The response tells the user that the badges and the banner were removed",
+        "No Documentation or Playground bullet is present, since no docs site or playground exists",
+        "The Features heading carries no emoji and every feature bullet has an emoji and a bold label",
+        "Documented capabilities are limited to what src/index.ts exports, such as renderGlyph and the three built-in fonts",
+        "The License section states MIT and links the LICENSE file",
+        "No section was added that the repository gives no evidence for, such as Troubleshooting or Examples"
+      ]
     }
   ]
 }
