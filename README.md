@@ -10,9 +10,9 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 - 🧭 **Earned sections:** Includes an optional section only when the repository gives it real content.
 - 🔍 **Evidence before prose:** Reads commands, versions, and license claims out of the repository instead of assuming them.
 - 🎯 **Scannable features:** Formats each feature as one emoji, a bold label, and one concise sentence.
-- 📐 **Settled headings:** Keeps `## Features` bare and gives every other H2 exactly one unrepeated emoji.
+- 📐 **Settled headings:** Keeps `## Features`, `## Why?`, and `## Background` bare and gives every other H2 one unrepeated emoji.
 - 🧩 **Domain sections:** Finds the one to three sections that only your project would have.
-- 🚦 **Sparing alerts:** Holds alerts to GitHub's recommended one or two, with severity chosen by consequence.
+- 🚦 **Sparing alerts:** Defaults to GitHub's recommended one or two alerts, with severity chosen by consequence.
 - 🪶 **Cheap to keep loaded:** Keeps `SKILL.md` well inside its budget and loads references only when needed.
 - ✅ **[Built-in evals](./nuxt-style-readme/evals):** Verifies the skill with 100+ output assertions plus 20 trigger queries.
 
@@ -62,9 +62,9 @@ This page is the skill's own output, so it doubles as the worked example.
 
 ## ⚠️ Limitations
 
-- Every output eval is a single run against a single model, so the recorded scores carry no variance estimate. One borderline call, whether an install section may mention the runtime its install command already implies, has already been seen going both ways between runs.
+- Every output eval is a single run against a single model, so the recorded scores carry no variance estimate. One borderline call has already gone both ways between runs: whether an install section may mention the runtime its install command already implies.
 - The fixture repositories are deliberately minimal stubs. They check structure, licensing, and command grounding, not whether documented behavior matches real behavior.
-- Of the assertions added in iteration 3, eight of eleven passed with and without the skill, so they guard against regressions rather than measure what the skill contributes.
+- Of the assertions added in iteration 3, eight of eleven passed with and without the skill, so those eight guard against regressions rather than measure what the skill contributes.
 
 ## 🛠️ Development
 
