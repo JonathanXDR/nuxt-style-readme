@@ -2,10 +2,10 @@
 
 Two suites, matching the two ways this skill can fail.
 
-| File | Question it answers |
-| ---- | ------------------- |
+| File                | Question it answers                                                             |
+| ------------------- | ------------------------------------------------------------------------------- |
 | `eval_queries.json` | Does the skill activate on the right requests and stay quiet on the wrong ones? |
-| `evals.json` | When it does activate, is the README correct? |
+| `evals.json`        | When it does activate, is the README correct?                                   |
 
 `files/` holds eleven small fixture repositories. Each is deliberately minimal and exists to make one decision checkable. `pomo-cli` has a one-line README and no configuration. `quickmath` has no LICENSE. `glyphkit` wraps licensed third party artwork. `sortmerge` already has a good README and should come back nearly untouched. `glowline` provides a banner asset, a docs homepage, a playground, and a publish workflow, so it is the positive path for the conditional opening chrome. `hoverkit` already carries a fully earned chrome opening that a refinement must preserve, and `pixelfont` carries unearned chrome, badges without a publish path and a banner without an asset, that a refinement must remove and disclose.
 
@@ -41,8 +41,8 @@ All thirteen cases ran with and without the skill, one run per configuration, ea
 
 | Configuration | Assertions passed |
 | ------------- | ----------------- |
-| With skill | 85 of 85 |
-| Without skill | 69 of 85 |
+| With skill    | 85 of 85          |
+| Without skill | 69 of 85          |
 
 The baseline's sixteen failures fall into two clusters. Convention drift covers most of them: a missing `## Features` section, plain `## Usage` and `## Requirements` headings, `## Why not just rsync?` in place of `## Why?`, a Background section renamed and given an emoji, and a Limitations heading without `⚠️`. The integrity cluster is smaller and more serious. On case 10 the baseline wrote an MIT license section for a repository that has no license, and on case 13 it answered the request for a "comprehensive, professional" README with shields.io badges, an Examples section for a repository containing none, nine H2 sections, and a notification claim that `main.go` does not support.
 
@@ -54,10 +54,10 @@ Each of those five, plus case 13, has since gained assertions resting on a fixtu
 
 The seven cases whose assertions changed were re-run in both arms to test whether the additions measure anything. They mostly do not.
 
-| Scope | With skill | Without skill |
-| ----- | ---------- | ------------- |
-| The eleven added assertions plus the one corrected | 12 of 12 | 9 of 12 |
-| All assertions on those seven cases | 58 of 59 | 45 of 59 |
+| Scope                                              | With skill | Without skill |
+| -------------------------------------------------- | ---------- | ------------- |
+| The eleven added assertions plus the one corrected | 12 of 12   | 9 of 12       |
+| All assertions on those seven cases                | 58 of 59   | 45 of 59      |
 
 Only cases 9 and 13 discriminate on the new assertions. Eight of the eleven added assertions passed in both arms, which means they are regression guards rather than evidence the skill helps. The three that earned their place are the two `## Features` assertions on case 9, where the baseline wrote no Features section at all, and the Project Structure ban on case 13, where the baseline produced an ASCII file tree for a five file repository. Adding an assertion because a rule is untested is not the same as adding one that separates the arms, and most of these did not.
 
@@ -119,10 +119,10 @@ Cases 15 and 16 re-ran after the changes and passed 18 of 18, taking the suite t
 
 The baseline was re-established from scratch, since the standing comparison dated from iteration 2 and predated the sentence bullets, the chrome rules, three fixtures, and cases 14 through 16, which had never run without the skill at all. All sixteen cases ran once in the baseline arm against the current fixtures and assertions, graded independently per case.
 
-| Configuration | Assertions passed |
-| ------------- | ----------------- |
-| With skill, latest run per case | 124 of 124 |
-| Without skill, this pass | 88 of 124 |
+| Configuration                   | Assertions passed |
+| ------------------------------- | ----------------- |
+| With skill, latest run per case | 124 of 124        |
+| Without skill, this pass        | 88 of 124         |
 
 The thirty-six baseline failures repeat the iteration 2 clusters and add chrome. Convention drift is the bulk: an emoji on the Features heading, plain bullets without emoji or bold labels, and missing or wrong H2 emoji across nine cases. The integrity cluster remains the serious one: the baseline again wrote an MIT license for the unlicensed quickmath in both of its cases, gave pomo-cli badges and an Examples section it has no evidence for, missed glyphkit's legal alert entirely, kept pixelfont's impossible npm install line, and rebuilt sortmerge's already-correct README so thoroughly that four preservation assertions failed. Chrome is the new cluster: on glowline the baseline produced a bare banner without the docs link, no reference-style badge block, and no Playground bullet in the right place.
 
@@ -140,11 +140,11 @@ The second pass therefore used a corrected harness: each run received its own is
 
 That harness has one more trap worth knowing before anyone runs it again. It sends `SIGKILL` to each `claude` process as soon as a verdict is reached, which that process cannot catch, so it never shuts down the MCP servers it started. Those servers are reparented to the init process and survive. A well behaved server exits when its stdin closes, but one that does not will sit spinning, and a hundred or so runs can leave enough of them to saturate several CPU cores. Spawn each run in its own process group with `start_new_session=True` and signal the group with `os.killpg` rather than the single process.
 
-| Pass | Harness | Result |
-| ---- | ------- | ------ |
-| 1 | Stock, empty project root, first tool call only | 11 of 20. Every negative correct, nine of ten positives failed. |
-| 2 | Corrected, real repository root, any-point detection | 20 of 20. Every positive at 3 of 3, every negative at 0 of 3. |
-| 3 | Corrected, re-run after the iteration 6 description change | 20 of 20. Every positive above one half, every negative below it. |
+| Pass | Harness                                                    | Result                                                            |
+| ---- | ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| 1    | Stock, empty project root, first tool call only            | 11 of 20. Every negative correct, nine of ten positives failed.   |
+| 2    | Corrected, real repository root, any-point detection       | 20 of 20. Every positive at 3 of 3, every negative at 0 of 3.     |
+| 3    | Corrected, re-run after the iteration 6 description change | 20 of 20. Every positive above one half, every negative below it. |
 
 All passes ran on claude-fable-5 with three runs per query, with nothing tuned against either split. The description changed in iteration 6, so pass 3 repeated the protocol against the description as it ships. The current trigger score is pass 3. The driver is committed at [`scripts/trigger_run.py`](../../scripts/trigger_run.py), one query per invocation, printing TRIGGERED or NOT_TRIGGERED.
 

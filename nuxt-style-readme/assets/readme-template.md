@@ -106,8 +106,8 @@ How to use it:
 
 <!-- Only the options that matter. A table once there are more than about three. -->
 
-| Option | Default | Effect |
-| ------ | ------- | ------ |
+| Option  | Default     | Effect         |
+| ------- | ----------- | -------------- |
 | `<key>` | `<default>` | <what changes> |
 
 ## <emoji> <Domain section>
@@ -144,8 +144,8 @@ How to use it:
 
 <!-- Only for failure modes the repository actually shows evidence of. -->
 
-| Symptom | Fix |
-| ------- | --- |
+| Symptom              | Fix                 |
+| -------------------- | ------------------- |
 | <what the user sees> | <what they do next> |
 
 ## ⚠️ Limitations

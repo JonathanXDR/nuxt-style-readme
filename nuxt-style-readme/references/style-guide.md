@@ -74,7 +74,7 @@ Two parts when third party terms apply. State the code license first, then draw 
 The tooling and wrapper code in this repository is [MIT licensed](./LICENSE).
 
 That license covers the code only. It grants no rights to <asset>, which is
-<terms> and governed by the [<name> license](<url>).
+<terms> and governed by the [<name> license](url).
 ```
 
 Name the copyright holder from the LICENSE file, never from a guess.
@@ -85,7 +85,7 @@ Name the copyright holder from the LICENSE file, never from a guess.
 
 A banner, badges, and Documentation or Playground bullets open the README only when the repository provides them. The inclusion tests are fixed in `SKILL.md`. The format, adapted from the Nuxt module family:
 
-````markdown
+```markdown
 [![<name> banner](./.github/assets/banner.png)](<docs site url>)
 
 [![npm version][npm-version-src]][npm-href]
@@ -98,18 +98,19 @@ A banner, badges, and Documentation or Playground bullets open the README only w
 
 - [📖 &nbsp;Documentation](<docs site url>)
 - [👾 &nbsp;Playground](./playground)
-````
+```
 
 Badge images use the reference style, one badge per source line, with the definitions collected at the bottom of the file under a `<!-- Badges -->` comment:
 
-````markdown
+```markdown
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/<package>/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-src]: https://img.shields.io/npm/dm/<package>.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-href]: https://npmjs.com/package/<package>
 [license-src]: https://img.shields.io/npm/l/<package>.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: ./LICENSE
-````
+```
 
 The banner links to the documentation site when one exists, otherwise it stands plain. The badge set is npm version, npm downloads, and license, with the license badge only when a LICENSE file exists. The same three-badge set maps to other registries through the matching shields endpoints, `pypi/v`, `pypi/dm`, and `pypi/l` for a Python package and `crates/v`, `crates/d`, and `crates/l` for a Rust crate, with the same style parameters. An ecosystem badge, such as the Nuxt badge on a Nuxt module, is a repository-specific decision. `colorB` may take the project's accent color. Each bullet's link text is the emoji, a space, a `&nbsp;` entity, then the label, exactly as shown.
 
@@ -117,25 +118,25 @@ The banner links to the documentation site when one exists, otherwise it stands 
 
 Pick for meaning, not decoration. Most rows come from the house repositories, the rest extend the same logic to sections those repositories have not needed yet, and reusing them keeps repositories recognizable as one family:
 
-| Emoji | Section |
-| ----- | ------- |
-| 📋 | Prerequisites |
-| 🚀 | Quick Start, Install |
-| 💻 | Usage, for libraries and packages |
-| 🧪 | Usage, for CLIs, applications, and scripts |
-| 📦 | Examples, Project Structure, packaging, archive contents |
-| ⚙️ | Configuration, Settings |
-| 🔧 | How It Works |
-| 🏗️ | Architecture |
-| 🗂️ | Project Structure, when 📦 is already taken |
-| 🔐 | Secrets, credentials, license keys, security |
-| 🔑 | Keys and tokens, when 🔐 is already taken |
-| 🎨 | Icons, themes, visual assets |
-| 🩹 | Troubleshooting |
-| ⚠️ | Limitations |
-| 🛠️ | Development |
-| ⛰️ | Next Steps |
-| ⚖️ | License |
+| Emoji | Section                                                  |
+| ----- | -------------------------------------------------------- |
+| 📋    | Prerequisites                                            |
+| 🚀    | Quick Start, Install                                     |
+| 💻    | Usage, for libraries and packages                        |
+| 🧪    | Usage, for CLIs, applications, and scripts               |
+| 📦    | Examples, Project Structure, packaging, archive contents |
+| ⚙️    | Configuration, Settings                                  |
+| 🔧    | How It Works                                             |
+| 🏗️    | Architecture                                             |
+| 🗂️    | Project Structure, when 📦 is already taken              |
+| 🔐    | Secrets, credentials, license keys, security             |
+| 🔑    | Keys and tokens, when 🔐 is already taken                |
+| 🎨    | Icons, themes, visual assets                             |
+| 🩹    | Troubleshooting                                          |
+| ⚠️    | Limitations                                              |
+| 🛠️    | Development                                              |
+| ⛰️    | Next Steps                                               |
+| ⚖️    | License                                                  |
 
 For a section not on this list, choose an emoji a reader recognizes instantly and can connect to the heading without thinking. Avoid anything abstract, ornamental, or clever.
 
@@ -173,13 +174,13 @@ Annotated file trees follow the same rule. Every line earns a comment or the tre
 
 The five supported types, with GitHub's own definitions:
 
-| Type | GitHub's definition |
-| ---- | ------------------- |
-| `NOTE` | "Useful information that users should know, even when skimming content." |
-| `TIP` | "Helpful advice for doing things better or more easily." |
-| `IMPORTANT` | "Key information users need to know to achieve their goal." |
-| `WARNING` | "Urgent info that needs immediate user attention to avoid problems." |
-| `CAUTION` | "Advises about risks or negative outcomes of certain actions." |
+| Type        | GitHub's definition                                                      |
+| ----------- | ------------------------------------------------------------------------ |
+| `NOTE`      | "Useful information that users should know, even when skimming content." |
+| `TIP`       | "Helpful advice for doing things better or more easily."                 |
+| `IMPORTANT` | "Key information users need to know to achieve their goal."              |
+| `WARNING`   | "Urgent info that needs immediate user attention to avoid problems."     |
+| `CAUTION`   | "Advises about risks or negative outcomes of certain actions."           |
 
 Syntax is a blockquote whose first line is the bracketed type in capitals:
 

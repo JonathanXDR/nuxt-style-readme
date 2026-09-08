@@ -10,25 +10,25 @@ Most READMEs land at six to nine H2 sections. A small script or single-purpose C
 
 Skip any section the repository does not earn. Do not reorder without a reason.
 
-| Order | Section | Canonical heading |
-| ----- | ------- | ----------------- |
-| 1 | Opening block: chrome and links when the repository provides them, title, description, at most one alert | `# Title` |
-| 2 | Why? | `## Why?` |
-| 3 | Features | `## Features` |
-| 4 | Background | `## Background` |
-| 5 | Prerequisites | `## 📋 Prerequisites` |
-| 6 | Quick Start or Install | `## 🚀 Quick Start` / `## 🚀 Install` |
-| 7 | Usage | `## 💻 Usage` / `## 🧪 Usage` |
-| 8 | Examples | `## 📦 Examples` |
-| 9 | Configuration | `## ⚙️ Configuration` / `## ⚙️ Settings` |
-| 10 | Domain sections | project-specific, floats anywhere from Usage down, see below |
-| 11 | How It Works or Architecture | `## 🔧 How It Works` / `## 🏗️ Architecture` |
-| 12 | Project Structure | `## 📦 Project Structure` |
-| 13 | Troubleshooting | `## 🩹 Troubleshooting` |
-| 14 | Limitations | `## ⚠️ Limitations` |
-| 15 | Development | `## 🛠️ Development` |
-| 16 | Next Steps | `## ⛰️ Next Steps` |
-| 17 | License | `## ⚖️ License` |
+| Order | Section                                                                                                  | Canonical heading                                            |
+| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 1     | Opening block: chrome and links when the repository provides them, title, description, at most one alert | `# Title`                                                    |
+| 2     | Why?                                                                                                     | `## Why?`                                                    |
+| 3     | Features                                                                                                 | `## Features`                                                |
+| 4     | Background                                                                                               | `## Background`                                              |
+| 5     | Prerequisites                                                                                            | `## 📋 Prerequisites`                                        |
+| 6     | Quick Start or Install                                                                                   | `## 🚀 Quick Start` / `## 🚀 Install`                        |
+| 7     | Usage                                                                                                    | `## 💻 Usage` / `## 🧪 Usage`                                |
+| 8     | Examples                                                                                                 | `## 📦 Examples`                                             |
+| 9     | Configuration                                                                                            | `## ⚙️ Configuration` / `## ⚙️ Settings`                     |
+| 10    | Domain sections                                                                                          | project-specific, floats anywhere from Usage down, see below |
+| 11    | How It Works or Architecture                                                                             | `## 🔧 How It Works` / `## 🏗️ Architecture`                  |
+| 12    | Project Structure                                                                                        | `## 📦 Project Structure`                                    |
+| 13    | Troubleshooting                                                                                          | `## 🩹 Troubleshooting`                                      |
+| 14    | Limitations                                                                                              | `## ⚠️ Limitations`                                          |
+| 15    | Development                                                                                              | `## 🛠️ Development`                                          |
+| 16    | Next Steps                                                                                               | `## ⛰️ Next Steps`                                           |
+| 17    | License                                                                                                  | `## ⚖️ License`                                              |
 
 `Why?` sits before `Features` because it frames the problem the features answer. `Background` sits after, because it is context you need once you know what the thing is. The house repositories have no `Why?` yet, so its position is a chosen convention rather than observed evidence.
 
