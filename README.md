@@ -20,7 +20,7 @@ An Agent Skill that writes and refines repository READMEs in a concise, Nuxt-ins
 Install the skill with the [skills CLI](https://skills.sh):
 
 ```bash
-npx skills add JonathanXDR/nuxt-style-readme-skill
+npx skills add JonathanXDR/nuxt-style-readme
 ```
 
 Nothing here is tied to a particular agent. The skill uses only the fields in the [Agent Skills specification](https://agentskills.io/specification) and no vendor extensions, and the [client showcase](https://agentskills.io/clients) links setup instructions for each compatible client.
@@ -98,7 +98,7 @@ See [`nuxt-style-readme/evals/README.md`](./nuxt-style-readme/evals/README.md) f
 1. 📖 Read [`section-rules.md`](./nuxt-style-readme/references/section-rules.md) to see which sections a repository has to earn.
 2. 🎨 Read [`style-guide.md`](./nuxt-style-readme/references/style-guide.md) if you want to fork the conventions and swap in your own.
 3. 🧱 Add a fixture under [`evals/files/`](./nuxt-style-readme/evals/files) when you hit a case the suites do not cover yet.
-4. 🐛 Hit a bug or have an idea? [Open an issue](https://github.com/JonathanXDR/nuxt-style-readme-skill/issues).
+4. 🐛 Hit a bug or have an idea? [Open an issue](https://github.com/JonathanXDR/nuxt-style-readme/issues).
 
 ## ⚖️ License
 
