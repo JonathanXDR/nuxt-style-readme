@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "nuxt-style-readme",
+  "description": "Writes and refines a repository's README.md in a concise, Nuxt-inspired documentation style, choosing sections from what the repository actually contains.",
+  "version": "1.5.0",
+  "author": {
+    "name": "Jonathan Russ",
+    "url": "https://github.com/JonathanXDR"
+  },
+  "homepage": "https://github.com/JonathanXDR/nuxt-style-readme",
+  "repository": "https://github.com/JonathanXDR/nuxt-style-readme",
+  "license": "MIT",
+  "keywords": ["readme", "documentation", "markdown", "nuxt", "technical-writing"]
+}

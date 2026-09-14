@@ -1,3 +1,0 @@
-# pomo
-
-A pomodoro timer.

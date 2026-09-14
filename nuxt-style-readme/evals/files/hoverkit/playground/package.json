@@ -1,8 +1,0 @@
-{
-  "name": "hoverkit-playground",
-  "private": true,
-  "type": "module",
-  "scripts": { "dev": "vite" },
-  "dependencies": { "hoverkit": "file:.." },
-  "devDependencies": { "vite": "^7.0.0" }
-}

@@ -1,8 +1,0 @@
-{
-  "name": "@example/glyphkit",
-  "version": "1.0.4",
-  "private": true,
-  "license": "UNLICENSED",
-  "publishConfig": { "registry": "https://npm.pkg.github.com" },
-  "scripts": { "build": "bun run scripts/build.ts", "test": "bun test" }
-}

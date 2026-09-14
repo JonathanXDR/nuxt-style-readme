@@ -1,9 +1,0 @@
-{
-  "name": "sortmerge",
-  "version": "3.0.1",
-  "description": "External merge sort for files larger than memory",
-  "type": "module",
-  "license": "MIT",
-  "engines": { "node": ">=20" },
-  "scripts": { "test": "vitest run", "build": "tsdown", "lint": "eslint ." }
-}
