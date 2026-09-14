@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: pass
+    ports: ['5432:5432']
+  mail:
+    image: axllent/mailpit
+    ports: ['1025:1025', '8025:8025']

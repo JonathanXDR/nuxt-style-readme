@@ -16,7 +16,7 @@ An [Agent Skill](https://agentskills.io) that writes and refines repository READ
 - 🚦 **Sparing alerts:** Defaults to GitHub's recommended one or two alerts, and picks severity by consequence.
 - ✍️ **Punctuation rules:** Keeps em dashes, en dashes, and semicolons out of the prose it writes.
 - 🪶 **Cheap to keep loaded:** Loads `SKILL.md` on activation and each reference only when a step needs it.
-- ✅ **[Built-in evals](./nuxt-style-readme/evals):** Verifies the skill with 100+ output assertions plus 20 trigger queries.
+- ✅ **[Built-in evals](./skills/nuxt-style-readme/evals):** Verifies the skill with 100+ output assertions plus 20 trigger queries.
 
 ## Background
 
@@ -57,12 +57,12 @@ The skill splits its content so that each step loads only what it needs:
 
 | File                                                                  | Loaded                                                   | Carries                                                 |
 | --------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------- |
-| [`SKILL.md`](./nuxt-style-readme/SKILL.md)                            | On activation                                            | The workflow, the non-negotiables, the gotchas          |
-| [`section-rules.md`](./nuxt-style-readme/references/section-rules.md) | Before choosing an outline                               | An inclusion test and canonical heading per section     |
-| [`style-guide.md`](./nuxt-style-readme/references/style-guide.md)     | Before writing prose                                     | Voice, headings, emoji, tables, alerts, license wording |
-| [`readme-template.md`](./nuxt-style-readme/assets/readme-template.md) | Only when building from nothing or restructuring heavily | A skeleton of the optional parts                        |
+| [`SKILL.md`](./skills/nuxt-style-readme/SKILL.md)                            | On activation                                            | The workflow, the non-negotiables, the gotchas          |
+| [`section-rules.md`](./skills/nuxt-style-readme/references/section-rules.md) | Before choosing an outline                               | An inclusion test and canonical heading per section     |
+| [`style-guide.md`](./skills/nuxt-style-readme/references/style-guide.md)     | Before writing prose                                     | Voice, headings, emoji, tables, alerts, license wording |
+| [`readme-template.md`](./skills/nuxt-style-readme/assets/readme-template.md) | Only when building from nothing or restructuring heavily | A skeleton of the optional parts                        |
 
-The skill sits in a `nuxt-style-readme/` subdirectory because the specification requires the directory name to match the skill name.
+The skill sits in `skills/nuxt-style-readme/` so that Claude Code loads it as a plugin, and the leaf directory name matches the skill name as the specification requires.
 
 The style guide grades its conventions by how far they bend: strong defaults that hold unless the repository objects, conditional patterns that depend on a condition you can check, repository-specific calls left to the evidence, and an avoid list of what never belongs in a README.
 
@@ -70,7 +70,7 @@ This page is the skill's own output, so it doubles as the worked example.
 
 ## 🔬 Measurement
 
-Both suites live in `nuxt-style-readme/evals/`. CI does not run them, so rerun the cases a rule change touches yourself. Every output case runs in a fresh context against a copy of its fixture, once with the skill and once without. The without-skill figure is a single sweep of all sixteen cases, while the with-skill figure is each case's most recent run.
+Both suites live in `skills/nuxt-style-readme/evals/`. CI does not run them, so rerun the cases a rule change touches yourself. Every output case runs in a fresh context against a copy of its fixture, once with the skill and once without. The without-skill figure is a single sweep of all sixteen cases, while the with-skill figure is each case's most recent run.
 
 | Suite          | Scale                                             | Result                                       |
 | -------------- | ------------------------------------------------- | -------------------------------------------- |
@@ -110,21 +110,21 @@ It fails on em dashes, en dashes, spaced hyphens standing in for other punctuati
 Measure `SKILL.md` against its two size budgets:
 
 ```bash
-wc -l < nuxt-style-readme/SKILL.md                                  # lines, budget 500
-awk '/^---$/{c++; next} c>=2' nuxt-style-readme/SKILL.md | wc -c    # body chars, budget 20,000
+wc -l < skills/nuxt-style-readme/SKILL.md                                  # lines, budget 500
+awk '/^---$/{c++; next} c>=2' skills/nuxt-style-readme/SKILL.md | wc -c    # body chars, budget 20,000
 ```
 
 The validator never looks at the body, so [`validate.yml`](./.github/workflows/validate.yml) is what enforces both budgets. It divides the character count by four and tests that estimate against a 5,000 token ceiling.
 
 Bump `metadata.version` in `SKILL.md` whenever the rules change materially, so an installed copy traces back to a revision.
 
-The trigger suite runs one query per invocation through [`scripts/trigger_run.py`](./scripts/trigger_run.py). See [`evals/README.md`](./nuxt-style-readme/evals/README.md) for both protocols and the harness traps worth knowing before you reproduce the numbers.
+The trigger suite runs one query per invocation through [`scripts/trigger_run.py`](./scripts/trigger_run.py). See [`evals/README.md`](./skills/nuxt-style-readme/evals/README.md) for both protocols and the harness traps worth knowing before you reproduce the numbers.
 
 ## ⛰️ Next Steps
 
-1. 📖 Read [`section-rules.md`](./nuxt-style-readme/references/section-rules.md) to see which sections a repository has to earn.
-2. 🎨 Read [`style-guide.md`](./nuxt-style-readme/references/style-guide.md) if you want to fork the conventions and swap in your own.
-3. 🧱 Add a fixture under [`evals/files/`](./nuxt-style-readme/evals/files) when you hit a case the suites do not cover yet.
+1. 📖 Read [`section-rules.md`](./skills/nuxt-style-readme/references/section-rules.md) to see which sections a repository has to earn.
+2. 🎨 Read [`style-guide.md`](./skills/nuxt-style-readme/references/style-guide.md) if you want to fork the conventions and swap in your own.
+3. 🧱 Add a fixture under [`evals/files/`](./skills/nuxt-style-readme/evals/files) when you hit a case the suites do not cover yet.
 4. 🐛 Hit a bug or have an idea? [Open an issue](https://github.com/JonathanXDR/nuxt-style-readme/issues).
 
 ## ⚖️ License

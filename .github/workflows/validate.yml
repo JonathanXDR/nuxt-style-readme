@@ -15,13 +15,13 @@ jobs:
         # PyPI skills-ref 0.1.1 ships its executable as agentskills. Upstream has
         # renamed it to skills-ref on main, so the pin keeps the invocation working
         # until a release ships the new name.
-        run: uvx --from 'skills-ref==0.1.1' agentskills validate ./nuxt-style-readme
+        run: uvx --from 'skills-ref==0.1.1' agentskills validate ./skills/nuxt-style-readme
       - name: Check prose punctuation
         run: python3 scripts/check_prose.py
       - name: Check SKILL.md size budgets
         run: |
-          lines=$(wc -l < nuxt-style-readme/SKILL.md)
-          chars=$(awk '/^---$/{c++; next} c>=2' nuxt-style-readme/SKILL.md | wc -c)
+          lines=$(wc -l < skills/nuxt-style-readme/SKILL.md)
+          chars=$(awk '/^---$/{c++; next} c>=2' skills/nuxt-style-readme/SKILL.md | wc -c)
           echo "SKILL.md: $lines lines, body $chars chars (~$((chars / 4)) tokens)"
           test "$lines" -le 500
           test "$((chars / 4))" -le 5000

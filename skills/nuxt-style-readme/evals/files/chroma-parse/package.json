@@ -1,0 +1,18 @@
+{
+  "name": "chroma-parse",
+  "version": "2.1.0",
+  "description": "Parse CSS color values into a normalized form",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": { "vitest": "^3.0.0", "tsdown": "^0.6.0" }
+}

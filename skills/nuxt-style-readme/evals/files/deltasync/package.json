@@ -1,0 +1,9 @@
+{
+  "name": "deltasync",
+  "version": "1.3.0",
+  "description": "Content-addressed file sync over an unreliable link",
+  "license": "MIT",
+  "bin": { "deltasync": "./bin/deltasync.js" },
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test", "lint": "eslint ." }
+}

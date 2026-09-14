@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="hoverkit">
+  <rect width="1280" height="320" fill="#0f172a"/>
+  <text x="640" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#ffffff">hoverkit</text>
+  <circle cx="500" cy="230" r="8" fill="#38bdf8"/>
+  <circle cx="640" cy="230" r="8" fill="#818cf8"/>
+  <circle cx="780" cy="230" r="8" fill="#c084fc"/>
+</svg>

@@ -84,7 +84,7 @@ def main() -> int:
                 text = json.dumps(block.get("input", {}))
                 if name == "Skill" and "nuxt-style-readme" in text:
                     triggered = True
-                if name == "Read" and "nuxt-style-readme/SKILL.md" in text:
+                if name == "Read" and "skills/nuxt-style-readme/SKILL.md" in text:
                     triggered = True
         print("TRIGGERED" if triggered else "NOT_TRIGGERED")
         return 0
